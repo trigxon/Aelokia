@@ -12,6 +12,7 @@ import com.aelokia.music.data.local.AppIcon
 import com.aelokia.music.data.local.AppLanguage
 import com.aelokia.music.data.local.EqualizerSettings
 import com.aelokia.music.data.local.MiscSettings
+import com.aelokia.music.data.local.SeekbarStyle
 import com.aelokia.music.playback.haptics.MusicHapticsConfig
 import com.aelokia.music.playback.haptics.MusicHapticsEngineMode
 import com.aelokia.music.playback.haptics.MusicHapticsIntensity
@@ -758,6 +759,9 @@ class SettingsViewModel @Inject constructor(
     }
     fun setCrossfadeSeconds(seconds: Int) = launchSettingsAction("update crossfade duration") {
         settingsPreferences.setCrossfadeSeconds(seconds.coerceIn(1, 12))
+    }
+    fun setSeekbarStyle(style: SeekbarStyle) = launchSettingsAction("update seekbar style") {
+        settingsPreferences.setSeekbarStyle(style)
     }
     fun setWavySeekbarEnabled(enabled: Boolean) = launchSettingsAction("update seekbar style") {
         settingsPreferences.setWavySeekbarEnabled(enabled)
