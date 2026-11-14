@@ -9,7 +9,7 @@
 
 namespace {
 
-using lastwave::dsd::DsdDecimator;
+using aelokia::dsd::DsdDecimator;
 
 DsdDecimator* fromHandle(jlong handle) noexcept {
     return reinterpret_cast<DsdDecimator*>(static_cast<std::uintptr_t>(handle));
@@ -18,7 +18,7 @@ DsdDecimator* fromHandle(jlong handle) noexcept {
 }  // namespace
 
 extern "C" JNIEXPORT jlong JNICALL
-Java_com_lastwave_app_playback_dsd_DsdNativeDecimator_nativeCreate(
+Java_com_aelokia_music_playback_dsd_DsdNativeDecimator_nativeCreate(
     JNIEnv*,
     jobject,
     jint channelCount,
@@ -29,7 +29,7 @@ Java_com_lastwave_app_playback_dsd_DsdNativeDecimator_nativeCreate(
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_com_lastwave_app_playback_dsd_DsdNativeDecimator_nativeDestroy(
+Java_com_aelokia_music_playback_dsd_DsdNativeDecimator_nativeDestroy(
     JNIEnv*,
     jobject,
     jlong handle) {
@@ -37,7 +37,7 @@ Java_com_lastwave_app_playback_dsd_DsdNativeDecimator_nativeDestroy(
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_com_lastwave_app_playback_dsd_DsdNativeDecimator_nativeReset(
+Java_com_aelokia_music_playback_dsd_DsdNativeDecimator_nativeReset(
     JNIEnv*,
     jobject,
     jlong handle) {
@@ -47,7 +47,7 @@ Java_com_lastwave_app_playback_dsd_DsdNativeDecimator_nativeReset(
 }
 
 extern "C" JNIEXPORT jint JNICALL
-Java_com_lastwave_app_playback_dsd_DsdNativeDecimator_nativeProcess(
+Java_com_aelokia_music_playback_dsd_DsdNativeDecimator_nativeProcess(
     JNIEnv* env,
     jobject,
     jlong handle,

@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="assets/LastWave_banner_v2_1440p.png" alt="LastWave Banner" width="100%" style="border-radius: 16px;" />
+<img src="assets/aelokia_banner.png" alt="Aelokia Banner" width="100%" style="border-radius: 16px;" />
 
-<h1>LastWave</h1>
+<h1>Aelokia</h1>
 
 **Simple Android YouTube Music client with Material UI, Liquid Glass, Bit-Perfect playback, Automix, Lossless addons & advanced audiophile features.**
 
@@ -15,9 +15,9 @@
 
 ## Overview
 
-LastWave is a fast, native YouTube Music client for Android that looks great and sounds even better. Built with Material 3 Expressive and Liquid Glass UI, it gives you a clean, fluid design that adapts to your music.
+Aelokia is a fast, native YouTube Music client for Android that looks great and sounds even better. Built with Material 3 Expressive and Liquid Glass UI, it gives you a clean, fluid design that adapts to your music.
 
-For audio lovers, LastWave packs Bit-Perfect USB DAC output, Lossless FLAC addon support, AutoEQ headphone presets with parametric EQ, smooth Automix transitions, Spotify Canvas & integration, and real-time synced lyrics, all in a lightweight app.
+For audio lovers, Aelokia packs Bit-Perfect USB DAC output, Lossless FLAC addon support, AutoEQ headphone presets with parametric EQ, smooth Automix transitions, Spotify Canvas & integration, and real-time synced lyrics, all in a lightweight app.
 
 ---
 
@@ -103,9 +103,9 @@ For audio lovers, LastWave packs Bit-Perfect USB DAC output, Lossless FLAC addon
 
 ### Installation
 
-[![Download APK](https://img.shields.io/badge/Download-Latest_APK-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://github.com/trigxon/Arkify/releases/download/5.2.1/LastWave-v5.2.1-universal.apk)
+[![Download APK](https://img.shields.io/badge/Download-Latest_APK-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://github.com/trigxon/Arkify/releases/download/5.2.1/Aelokia-v5.2.1-universal.apk)
 
-**[LastWave v5.2.1 — Universal APK](https://github.com/trigxon/Arkify/releases/download/5.2.1/LastWave-v5.2.1-universal.apk)** — the latest stable build, works on all supported devices (Android 7.0+ / API 24+).
+**[Aelokia v5.2.1 — Universal APK](https://github.com/trigxon/Arkify/releases/download/5.2.1/Aelokia-v5.2.1-universal.apk)** — the latest stable build, works on all supported devices (Android 7.0+ / API 24+).
 
 ### Quick Setup
 
@@ -145,7 +145,7 @@ cd Arkify
 
 ## Support the Project
 
-If LastWave has been useful to you, consider supporting its development.
+If Aelokia has been useful to you, consider supporting its development.
 
 <div align="left">
   <table style="margin: 0 auto; border-collapse: collapse; border: none;">
@@ -166,7 +166,7 @@ If LastWave has been useful to you, consider supporting its development.
 
 ## Acknowledgements
 
-LastWave is made possible thanks to these open-source projects:
+Aelokia is made possible thanks to these open-source projects:
 
 - **[Metrolist](https://github.com/MetrolistGroup/Metrolist)** — InnerTubeX & stream resolving
 - **[SimpMusic](https://github.com/maxrave-dev/SimpMusic)** — Canvas extraction & Liquid Glass inspiration
@@ -182,8 +182,8 @@ LastWave is made possible thanks to these open-source projects:
 
 ## Disclaimer
 
-LastWave is an open-source, non-commercial application developed strictly for educational and research purposes.
+Aelokia is an open-source, non-commercial application developed strictly for educational and research purposes.
 
 - **No Affiliation:** This project is not affiliated with, funded, authorized, endorsed by, or in any way associated with Google LLC, YouTube, YouTube Music, Spotify, Apple Inc., Last.fm, or any of their subsidiaries.
-- **Content Delivery:** LastWave does not host, store on private servers, or distribute copyrighted media. All playback streams and metadata are resolved directly from public endpoints.
+- **Content Delivery:** Aelokia does not host, store on private servers, or distribute copyrighted media. All playback streams and metadata are resolved directly from public endpoints.
 - **Trademarks:** All product names, logos, trademarks, and registered trademarks belong to their respective owners.

@@ -9,7 +9,7 @@
 #include <memory>
 #include <mutex>
 
-namespace lastwave::audio {
+namespace aelokia::audio {
 
 // PCM encodings shared with Kotlin (InternalDirectStream). Keep in sync.
 enum DirectEncoding : std::int32_t {
@@ -131,4 +131,4 @@ private:
     std::atomic<std::int64_t> underruns_{0};
 };
 
-}  // namespace lastwave::audio
+}  // namespace aelokia::audio

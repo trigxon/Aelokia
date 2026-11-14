@@ -3,7 +3,7 @@ project("decent_usb_audio" C CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 
-# USB isochronous driver only. LastWave keeps its own Media3 FLAC decoder;
+# USB isochronous driver only. Aelokia keeps its own Media3 FLAC decoder;
 # the decent NativeAudioEngine / libFLAC path is not built.
 add_library(decent_usb_audio SHARED
     usb-audio-output.cpp

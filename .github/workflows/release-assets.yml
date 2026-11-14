@@ -21,19 +21,19 @@ jobs:
             task: assembleRelease
             arguments: ''
             output: release/app-release.apk
-            package: com.lastwave.app
+            package: com.aelokia.music
             min_sdk: '29'
           - variant: universal-uncompressed
             task: assembleRawRelease
             arguments: ''
             output: rawRelease/app-rawRelease.apk
-            package: com.lastwave.app
+            package: com.aelokia.music
             min_sdk: '29'
           - variant: android7
             task: assembleRelease
             arguments: '-PminSdk=24'
             output: release/app-release.apk
-            package: com.lastwave.app
+            package: com.aelokia.music
             min_sdk: '24'
           - variant: vivo-origin
             task: assembleRelease
@@ -69,31 +69,31 @@ jobs:
         if: matrix.variant == 'universal'
         run: >-
           ./gradlew :app:testDebugUnitTest
-          --tests 'com.lastwave.app.data.download.YouTubeDownloadResolverTest'
-          --tests 'com.lastwave.app.data.download.TrackDownloadTransferTest'
-          --tests 'com.lastwave.app.data.download.DownloadPayloadValidationTest'
-          --tests 'com.lastwave.app.data.music.AwaitSharedStreamTest'
-          --tests 'com.lastwave.app.data.download.ClearAllDownloadsTest'
-          --tests 'com.lastwave.app.data.download.AudioRestoreScanTest'
-          --tests 'com.lastwave.app.data.download.Mp4FlacRemuxerTest'
-          --tests 'com.lastwave.app.data.download.Fmp4IndexBuilderTest'
-          --tests 'com.lastwave.app.playback.ChunkedRangeDataSourceTest'
-          --tests 'com.lastwave.app.data.music.PlaybackCandidateRaceTest'
-          --tests 'com.lastwave.app.data.lyrics.LyricsSanitizerTest'
-          --tests 'com.lastwave.app.data.localmusic.LocalMusicLibraryScanTest'
-          --tests 'com.lastwave.app.data.playlist.LikedSongsManagerTest'
-          --tests 'com.lastwave.app.data.ytmusic.YtLikedSongsSyncTest'
-          --tests 'com.lastwave.app.playback.SwapAlignmentTest'
-          --tests 'com.lastwave.app.ui.player.ScrollCollapseTrackerTest'
-          --tests 'com.lastwave.app.ui.playlist.PlaylistTrackRowsTest'
-          --tests 'com.lastwave.app.data.music.YouTubeProbeSelectionTest'
+          --tests 'com.aelokia.music.data.download.YouTubeDownloadResolverTest'
+          --tests 'com.aelokia.music.data.download.TrackDownloadTransferTest'
+          --tests 'com.aelokia.music.data.download.DownloadPayloadValidationTest'
+          --tests 'com.aelokia.music.data.music.AwaitSharedStreamTest'
+          --tests 'com.aelokia.music.data.download.ClearAllDownloadsTest'
+          --tests 'com.aelokia.music.data.download.AudioRestoreScanTest'
+          --tests 'com.aelokia.music.data.download.Mp4FlacRemuxerTest'
+          --tests 'com.aelokia.music.data.download.Fmp4IndexBuilderTest'
+          --tests 'com.aelokia.music.playback.ChunkedRangeDataSourceTest'
+          --tests 'com.aelokia.music.data.music.PlaybackCandidateRaceTest'
+          --tests 'com.aelokia.music.data.lyrics.LyricsSanitizerTest'
+          --tests 'com.aelokia.music.data.localmusic.LocalMusicLibraryScanTest'
+          --tests 'com.aelokia.music.data.playlist.LikedSongsManagerTest'
+          --tests 'com.aelokia.music.data.ytmusic.YtLikedSongsSyncTest'
+          --tests 'com.aelokia.music.playback.SwapAlignmentTest'
+          --tests 'com.aelokia.music.ui.player.ScrollCollapseTrackerTest'
+          --tests 'com.aelokia.music.ui.playlist.PlaylistTrackRowsTest'
+          --tests 'com.aelokia.music.data.music.YouTubeProbeSelectionTest'
           --stacktrace
 
       - name: Upload regression test results
         if: ${{ always() && matrix.variant == 'universal' }}
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
-          name: LastWave-v5.2.1-regression-test-results
+          name: Aelokia-v5.2.1-regression-test-results
           path: |
             app/build/reports/tests/testDebugUnitTest/
             app/build/test-results/testDebugUnitTest/
@@ -115,7 +115,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p final_apk
-          APK="final_apk/LastWave-v5.2.1-${VARIANT}.apk"
+          APK="final_apk/Aelokia-v5.2.1-${VARIANT}.apk"
           cp "app/build/outputs/apk/${APK_OUTPUT}" "$APK"
           SDKROOT="${ANDROID_HOME:-$ANDROID_SDK_ROOT}"
           BUILD_TOOLS=$(find "$SDKROOT/build-tools" -mindepth 1 -maxdepth 1 -type d | sort -V | tail -n1)
@@ -138,7 +138,7 @@ jobs:
       - name: Upload verified APK
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
-          name: LastWave-v5.2.1-${{ matrix.variant }}-verified
+          name: Aelokia-v5.2.1-${{ matrix.variant }}-verified
           path: final_apk/*.apk
           if-no-files-found: error
           compression-level: 0
@@ -151,7 +151,7 @@ jobs:
       - name: Download four verified APKs
         uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
         with:
-          pattern: LastWave-v5.2.1-*-verified
+          pattern: Aelokia-v5.2.1-*-verified
           merge-multiple: true
           path: final_apk
 
@@ -167,7 +167,7 @@ jobs:
       - name: Upload complete release assets
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
-          name: LastWave-v5.2.1-release-assets
+          name: Aelokia-v5.2.1-release-assets
           path: final_apk/*
           if-no-files-found: error
           compression-level: 0

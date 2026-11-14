@@ -9,17 +9,17 @@
 -keepattributes *Annotation*, Signature, InnerClasses, EnclosingMethod
 
 # JNI exports use the Kotlin class and method names verbatim.
--keep class com.lastwave.app.playback.NativeAudioEngine { *; }
--keep class com.lastwave.app.data.lossless.NativeSecrets { *; }
+-keep class com.aelokia.music.playback.NativeAudioEngine { *; }
+-keep class com.aelokia.music.data.lossless.NativeSecrets { *; }
 
 # kotlinx.serialization: keep generated serializers and Serializable models
--keepclassmembers class com.lastwave.app.** {
+-keepclassmembers class com.aelokia.music.** {
     *** Companion;
 }
--keepclasseswithmembers class com.lastwave.app.** {
+-keepclasseswithmembers class com.aelokia.music.** {
     kotlinx.serialization.KSerializer serializer(...);
 }
--keep,includedescriptorclasses class com.lastwave.app.**$$serializer { *; }
+-keep,includedescriptorclasses class com.aelokia.music.**$$serializer { *; }
 -keepclassmembers @kotlinx.serialization.Serializable class * {
     *** Companion;
     kotlinx.serialization.KSerializer serializer(...);
@@ -41,7 +41,7 @@
 -keep class * extends androidx.glance.appwidget.action.ActionCallback { *; }
 -keep class * extends androidx.glance.appwidget.GlanceAppWidget { *; }
 -keep class * extends androidx.glance.appwidget.GlanceAppWidgetReceiver { *; }
--keep class com.lastwave.app.widget.** { *; }
+-keep class com.aelokia.music.widget.** { *; }
 
 # NewPipe's YouTube extractor loads service implementations and its
 # JavaScript deobfuscation engine dynamically.
@@ -88,13 +88,13 @@
 # Keep all InnerTube Search, Browse, and Music JSON data models
 -keep @androidx.annotation.Keep class * { *; }
 -keepclassmembers @androidx.annotation.Keep class * { *; }
--keep class com.lastwave.app.data.music.** { *; }
--keepclassmembers class com.lastwave.app.data.music.** { *; }
--keep class com.lastwave.app.data.podcast.** { *; }
--keepclassmembers class com.lastwave.app.data.podcast.** { *; }
+-keep class com.aelokia.music.data.music.** { *; }
+-keepclassmembers class com.aelokia.music.data.music.** { *; }
+-keep class com.aelokia.music.data.podcast.** { *; }
+-keepclassmembers class com.aelokia.music.data.podcast.** { *; }
 
 
-# Shrink and optimize, but do not rename classes/members. LastWave is open
+# Shrink and optimize, but do not rename classes/members. Aelokia is open
 # source, so renaming hides nothing, and the scrambled single-letter names
 # (a.b.c) are what Huorong's static TrojanDropper/Android.Agent heuristic
 # matched: the unobfuscated rawRelease build of the same code scans clean.

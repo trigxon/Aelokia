@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">LastWave</string>
-    <string name="widget_name">Lettore LastWave</string>
+    <string name="app_name">AELOKIA</string>
+    <string name="widget_name">Lettore AELOKIA</string>
     <string name="widget_description">Copertina, dettagli del brano e controlli di riproduzione per ogni app multimediale</string>
-    <string name="widget_obsidian_name">LastWave Vetro ossidiana</string>
+    <string name="widget_obsidian_name">AELOKIA Vetro ossidiana</string>
     <string name="widget_obsidian_description">Lettore in vetro ossidiana smerigliato, con profondità traslucida e bordo cristallino</string>
 
     <!-- Bottom navigation -->
@@ -15,7 +15,7 @@
     <string name="update_available">Aggiornamento disponibile</string>
     <string name="update">Aggiorna</string>
     <string name="dismiss_update">Ignora aggiornamento</string>
-    <string name="update_ready_to_install">LastWave v%1$s è pronto per l\'installazione</string>
+    <string name="update_ready_to_install">AELOKIA v%1$s è pronto per l\'installazione</string>
 
     <!-- Settings -->
     <string name="settings">Impostazioni</string>
@@ -338,7 +338,7 @@
     <string name="dialog_clear_all_text">Rimuove credenziali, playlist, brani scaricati e dati in cache. L\'operazione non si può annullare.</string>
     <string name="dialog_clear_all_confirm">Cancella tutto</string>
     <string name="dialog_disconnect_yt_title">Disconnettere YouTube Music?</string>
-    <string name="dialog_disconnect_yt_text">Le playlist già copiate sul tuo account restano lì, ma LastWave smette di sincronizzare e dimentica la connessione.</string>
+    <string name="dialog_disconnect_yt_text">Le playlist già copiate sul tuo account restano lì, ma AELOKIA smette di sincronizzare e dimentica la connessione.</string>
     <string name="dialog_logout_title">Uscire da Last.fm?</string>
     <string name="dialog_logout_text">Playlist e dati in cache verranno conservati.</string>
 
@@ -817,7 +817,7 @@
     <string name="set_lfm_disc_title">Disconnettere Last.fm?</string>
     <string name="set_lfm_disc_text">Gli scrobble globali si mettono in pausa. Le Statistiche passano alla cronologia locale: non viene eliminato nulla.</string>
     <string name="set_lfm_disc_btn">Disconnetti</string>
-    <string name="set_about_title">LastWave</string>
+    <string name="set_about_title">AELOKIA</string>
     <string name="set_color_title">Colore personalizzato</string>
     <string name="set_hue">Tonalità</string>
     <string name="set_sat">Saturazione</string>
@@ -826,7 +826,7 @@
     <string name="set_eq_enable">Attiva equalizzatore</string>
     <string name="set_eq_custom">Personalizzato</string>
     <string name="set_yt_channel">Canale YouTube</string>
-    <string name="set_yt_channel_sub">Scegli il canale di cui LastWave usa libreria, mi piace e cronologia</string>
+    <string name="set_yt_channel_sub">Scegli il canale di cui AELOKIA usa libreria, mi piace e cronologia</string>
     <string name="set_yt_loading">Caricamento canali…</string>
     <string name="set_yt_empty_title">Nessun canale trovato</string>
     <string name="set_yt_empty_sub">Controlla la connessione, poi riprova.</string>
@@ -864,11 +864,11 @@
     <string name="set_usb_old">Richiede Android 10 o successivo</string>
     <string name="set_usb_on">usbdevfs diretto verso il DAC • il bit-perfect lo attiva in automatico</string>
     <string name="set_usb_off">Disattivo • serve un DAC USB e il bit-perfect (o questo interruttore)</string>
-    <string name="set_yt_hist_on">Attivo • i brani ascoltati in LastWave, anche lossless e download, compaiono nella cronologia di YouTube Music</string>
-    <string name="set_yt_hist_off">Disattivo • gli ascolti in LastWave restano fuori dalla cronologia di YouTube Music</string>
+    <string name="set_yt_hist_on">Attivo • i brani ascoltati in Aelokia, anche lossless e download, compaiono nella cronologia di YouTube Music</string>
+    <string name="set_yt_hist_off">Disattivo • gli ascolti in AELOKIA restano fuori dalla cronologia di YouTube Music</string>
     <string name="set_discord_title">Discord Rich Presence</string>
     <string name="set_discord_on">Attivo • brano, qualità e copertina compaiono sul profilo Discord</string>
-    <string name="set_discord_off">Disattivo • LastWave non compare sul profilo Discord</string>
+    <string name="set_discord_off">Disattivo • AELOKIA non compare sul profilo Discord</string>
     <string name="set_tg_sub">Unisciti a @clashprojects su Telegram</string>
     <string name="set_discord_support">Supporto Discord</string>
     <string name="set_discord_support_sub">Entra nella community Discord</string>
@@ -894,9 +894,9 @@
     <string name="toast_sync_fail">Sincronizzazione playlist non riuscita: %1$s</string>
     <string name="toast_synced">Sincronizzate %1$d playlist dal JSON locale</string>
     <string name="toast_restored">Ripristinate %1$d playlist%2$s</string>
-    <string name="toast_newer_backup">Questo backup è stato creato con una versione più recente di LastWave</string>
-    <string name="toast_not_backup">Questo file non sembra un backup di LastWave</string>
-    <string name="toast_not_json">Questo non è un backup di LastWave né un JSON di playlist</string>
+    <string name="toast_newer_backup">Questo backup è stato creato con una versione più recente di AELOKIA</string>
+    <string name="toast_not_backup">Questo file non sembra un backup di AELOKIA</string>
+    <string name="toast_not_json">Questo non è un backup di AELOKIA né un JSON di playlist</string>
     <string name="toast_empty_file">Il file selezionato è vuoto o illeggibile</string>
     <string name="toast_restore_fail">Ripristino non riuscito: %1$s</string>
     <string name="toast_restore_read">Errore di lettura del ripristino: %1$s</string>
@@ -1120,7 +1120,7 @@
     <string name="lyshare_mode_lyrics">Testi</string>
     <string name="lyshare_action_share">Condividi</string>
     <string name="lyshare_action_save">Salva</string>
-    <string name="lyshare_saved_to_gallery">Salvato in Pictures/LastWave</string>
+    <string name="lyshare_saved_to_gallery">Salvato in Pictures/Aelokia</string>
     <string name="lyshare_save_failed">Impossibile salvare l\'immagine</string>
     <string name="lyshare_share_failed">Impossibile condividere l\'immagine</string>
     <string name="lyshare_button_cd">Condividi testi</string>
@@ -1135,7 +1135,7 @@
     <string name="lyshare_color_white">Bianco</string>
     <string name="lyshare_color_black">Nero</string>
     <string name="lyshare_color_accent">Accento</string>
-    <string name="lyshare_color_brand">Lime LastWave</string>
+    <string name="lyshare_color_brand">Lime AELOKIA</string>
     <string name="lyshare_accessibility_line_selected">Selezionata, riga %1$d di %2$d</string>
     <string name="lyshare_accessibility_line_unselected">Riga %1$d di %2$d</string>
 
@@ -1153,13 +1153,13 @@
     <string name="toast_spotify_disconnected">Account Spotify disconnesso</string>
 
     <!-- Wave home-screen widgets -->
-    <string name="wave_widget_strip_name">LastWave Strip · 3×1–4×1</string>
+    <string name="wave_widget_strip_name">AELOKIA Strip · 3×1–4×1</string>
     <string name="wave_widget_strip_description">Lettore a tutta copertina con mi piace, precedente, riproduci, successivo e casuale; ridimensionabile tra 3×1 e 4×1</string>
-    <string name="wave_widget_glass_name">LastWave Glass · 2×2</string>
+    <string name="wave_widget_glass_name">AELOKIA Glass · 2×2</string>
     <string name="wave_widget_glass_description">Lettore quadrato fisso in vetro, con i colori della copertina, avanzamento e controlli</string>
-    <string name="wave_widget_circular_name">LastWave Wave Circular · 2×2</string>
+    <string name="wave_widget_circular_name">AELOKIA Wave Circular · 2×2</string>
     <string name="wave_widget_circular_description">Copertina circolare fissa con anello a onda e controlli precedente, riproduci e successivo</string>
-    <string name="wave_widget_library_name">LastWave Library Grid</string>
+    <string name="wave_widget_library_name">AELOKIA Library Grid</string>
     <string name="wave_widget_library_description">In riproduzione, quattro brani recenti e accesso rapido; ridimensionabile tra 3×2 e 4×2</string>
     <string name="wave_widget_recently_played">Ascoltati di recente</string>
     <string name="wave_widget_coming_next">In arrivo</string>
@@ -1184,7 +1184,7 @@
     <string name="wave_widget_playlist_recent">Recenti</string>
     <string name="wave_widget_playlist_most_played">Più ascoltati</string>
     <string name="wave_widget_preview_title">Midnight Current</string>
-    <string name="wave_widget_preview_artist">LastWave Radio</string>
+    <string name="wave_widget_preview_artist">AELOKIA Radio</string>
     <string name="wave_widget_preview_next_one">Afterglow · Lumen</string>
     <string name="wave_widget_preview_next_two">Low Tide · Nocturne</string>
     <string name="wave_widget_preview_next_three">Signal Bloom · Arc</string>
@@ -1198,13 +1198,13 @@
     <string name="app_icon_default">Predefinita</string>
     <string name="app_icon_default_sub">Electric Lime e Obsidian Teal originali</string>
     <string name="app_icon_desktop">Desktop</string>
-    <string name="app_icon_desktop_sub">Edizione LastWave Desktop Player</string>
+    <string name="app_icon_desktop_sub">Edizione AELOKIA Desktop Player</string>
     <string name="app_icon_white">Bianco puro</string>
     <string name="app_icon_white_sub">Logo bianco con linee nere</string>
     <string name="app_icon_black">Nero ossidiana</string>
     <string name="app_icon_black_sub">Logo nero con linee bianche</string>
-    <string name="settings_lastwave_theme">Tema signature LastWave</string>
-    <string name="settings_lastwave_theme_sub">Palette del logo • Electric Lime e Obsidian Teal</string>
+    <string name="settings_aelokia_theme">Tema signature AELOKIA</string>
+    <string name="settings_aelokia_theme_sub">Palette del logo • Electric Lime e Obsidian Teal</string>
     <string name="settings_bold_font">Usa il grassetto</string>
     <string name="settings_bold_font_sub">Rende tutto il testo più spesso, testi dei brani inclusi</string>
     <string name="settings_music_video">Video musicale</string>
@@ -1229,7 +1229,7 @@
     <string name="settings_canvas_gradient_blur">Sfocatura a gradiente sul canvas</string>
     <string name="settings_canvas_gradient_blur_sub">Fonde il fondo del canvas con i gradienti dello sfondo</string>
     <string name="settings_stop_on_recents">Ferma la riproduzione se chiudi l\'app</string>
-    <string name="settings_stop_on_recents_on">Togliere LastWave dai Recenti ferma la riproduzione</string>
+    <string name="settings_stop_on_recents_on">Togliere AELOKIA dai Recenti ferma la riproduzione</string>
     <string name="settings_stop_on_recents_off">La riproduzione continua in background dopo aver lasciato i Recenti</string>
 
     <string name="settings_section_storage">Archiviazione</string>
@@ -1244,7 +1244,7 @@
     <string name="storage_cache_last_cleared">Ultima pulizia %1$s • %2$s liberati</string>
     <string name="storage_cache_limit">Limite della cache</string>
     <string name="storage_cache_limit_summary">Limite scelto: %1$s • Massimo disponibile: %2$s. Gli elementi in cache più vecchi vengono rimossi se serve; i download sono esclusi.</string>
-    <string name="storage_quality_note">Le copertine usano miniature più piccole con i dati mobili. Se una copertina ad alta risoluzione è già in cache, LastWave la riusa senza scaricarla di nuovo.</string>
+    <string name="storage_quality_note">Le copertine usano miniature più piccole con i dati mobili. Se una copertina ad alta risoluzione è già in cache, AELOKIA la riusa senza scaricarla di nuovo.</string>
     <string name="storage_clear_cache">Svuota cache</string>
     <string name="storage_clear_cache_title">Svuotare copertine e audio in cache?</string>
     <string name="storage_clear_cache_message">Rimuove le copertine in cache e l\'audio in streaming. La musica scaricata resta sul dispositivo.</string>
@@ -1260,7 +1260,7 @@
     <string name="storage_downloads_deleted">Musica scaricata eliminata</string>
     <string name="storage_operation_failed">Impossibile completare l\'operazione di archiviazione</string>
     <string name="settings_desktop_app">Scarica l\'app desktop</string>
-    <string name="about_made_by">Creato dal team LastWave</string>
+    <string name="about_made_by">Creato dal team AELOKIA</string>
 
     <string name="home_section_greeting_title">Intestazione di saluto</string>
     <string name="home_section_greeting_sub">Saluto del giorno e data</string>
@@ -1319,7 +1319,7 @@
     <string name="menu_copy_link">Copia link</string>
     <string name="link_copied">Link copiato negli appunti</string>
     <string name="menu_quick_jam">Jam</string>
-    <string name="settings_jam_title">LastWave Jam</string>
+    <string name="settings_jam_title">AELOKIA Jam</string>
     <string name="settings_jam_sub">Ascolto insieme in tempo reale • Crea o entra con un codice</string>
     <string name="playlist_rearrange_songs">Riordina i brani</string>
     <string name="playlist_rearrange_clear_search">Cancella la ricerca per riordinare i brani</string>
@@ -1441,8 +1441,8 @@
     <string name="autoeq_msg_download_failed">Impossibile scaricare questo profilo</string>
     <string name="autoeq_msg_device_saved">Profilo salvato per questo dispositivo</string>
     <string name="signal_label_autoeq">AutoEQ</string>
-    <string name="signal_detail_autoeq">Correzione applicata da LastWave (modifica i campioni, il mixer di Android resta escluso)</string>
-    <string name="signal_verdict_direct_eq">Mixer di Android escluso. LastWave applica la correzione AutoEQ, poi i campioni vanno direttamente all\'HAL.</string>
+    <string name="signal_detail_autoeq">Correzione applicata da AELOKIA (modifica i campioni, il mixer di Android resta escluso)</string>
+    <string name="signal_verdict_direct_eq">Mixer di Android escluso. AELOKIA applica la correzione AutoEQ, poi i campioni vanno direttamente all\'HAL.</string>
     <string name="signal_direct_eq">DIRECT + EQ</string>
     <string name="settings_spotify_live_playlists_title">Playlist con sync dal vivo</string>
     <string name="settings_spotify_live_playlists_sub">Mostra le playlist Spotify e i Brani che ti piacciono nella libreria Playlist</string>

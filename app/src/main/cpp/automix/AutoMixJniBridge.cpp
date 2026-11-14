@@ -22,7 +22,7 @@ namespace {
 extern "C" {
 
 JNIEXPORT void JNICALL
-Java_com_lastwave_app_playback_automix_engine_SpectralCrossoverAudioProcessor_nativeInit(
+Java_com_aelokia_music_playback_automix_engine_SpectralCrossoverAudioProcessor_nativeInit(
     JNIEnv* /* env */,
     jobject /* thiz */,
     jfloat sampleRate
@@ -46,7 +46,7 @@ Java_com_lastwave_app_playback_automix_engine_SpectralCrossoverAudioProcessor_na
 }
 
 JNIEXPORT void JNICALL
-Java_com_lastwave_app_playback_automix_engine_SpectralCrossoverAudioProcessor_nativeReset(
+Java_com_aelokia_music_playback_automix_engine_SpectralCrossoverAudioProcessor_nativeReset(
     JNIEnv* /* env */,
     jobject /* thiz */
 ) {
@@ -58,7 +58,7 @@ Java_com_lastwave_app_playback_automix_engine_SpectralCrossoverAudioProcessor_na
 }
 
 JNIEXPORT void JNICALL
-Java_com_lastwave_app_playback_automix_engine_SpectralCrossoverAudioProcessor_nativeSetTempoRatio(
+Java_com_aelokia_music_playback_automix_engine_SpectralCrossoverAudioProcessor_nativeSetTempoRatio(
     JNIEnv* /* env */,
     jobject /* thiz */,
     jfloat ratioAlpha,
@@ -70,7 +70,7 @@ Java_com_lastwave_app_playback_automix_engine_SpectralCrossoverAudioProcessor_na
 }
 
 JNIEXPORT void JNICALL
-Java_com_lastwave_app_playback_automix_engine_SpectralCrossoverAudioProcessor_nativeProcessStereo(
+Java_com_aelokia_music_playback_automix_engine_SpectralCrossoverAudioProcessor_nativeProcessStereo(
     JNIEnv* env,
     jobject /* thiz */,
     jobject alphaBuf,
@@ -98,7 +98,7 @@ Java_com_lastwave_app_playback_automix_engine_SpectralCrossoverAudioProcessor_na
 }
 
 JNIEXPORT jfloat JNICALL
-Java_com_lastwave_app_playback_automix_engine_SpectralCrossoverAudioProcessor_nativeEstimateLufs(
+Java_com_aelokia_music_playback_automix_engine_SpectralCrossoverAudioProcessor_nativeEstimateLufs(
     JNIEnv* env,
     jobject /* thiz */,
     jobject pcmBuf,

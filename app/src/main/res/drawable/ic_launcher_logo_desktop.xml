@@ -1,20 +1,8 @@
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="108dp"
-    android:height="108dp"
-    android:viewportWidth="108"
-    android:viewportHeight="108">
-    <!-- Desktop logo bars with true logo proportions for in-app UI. -->
-    <path
-        android:fillColor="#023C42"
-        android:pathData="M17.19,41.40 A6.91,6.91 0 0 1 31.01,41.40 L31.01,67.66 A6.91,6.91 0 0 1 17.19,67.66 Z" />
-    <path
-        android:fillColor="#023C42"
-        android:pathData="M37.12,19.93 A6.96,6.96 0 0 1 51.05,19.93 L51.05,87.33 A6.96,6.96 0 0 1 37.12,87.33 Z" />
-    <path
-        android:fillColor="#023C42"
-        android:pathData="M57.16,28.05 A6.96,6.96 0 0 1 71.09,28.05 L71.09,80.26 A6.96,6.96 0 0 1 57.16,80.26 Z" />
-    <path
-        android:fillColor="#023C42"
-        android:pathData="M77.10,41.45 A6.96,6.96 0 0 1 91.02,41.45 L91.02,67.61 A6.96,6.96 0 0 1 77.10,67.61 Z" />
-</vector>
-
+    android:width="108dp" android:height="108dp"
+    android:viewportWidth="128" android:viewportHeight="100">
+    <path android:fillColor="#012226" android:pathData="M33.25,62.0 L33.25,62.0 A5.25,5.25 0 0 1 38.5,67.25 L38.5,82.75 A5.25,5.25 0 0 1 33.25,88.0 L33.25,88.0 A5.25,5.25 0 0 1 28.0,82.75 L28.0,67.25 A5.25,5.25 0 0 1 33.25,62.0 Z"/>
+    <path android:fillColor="#012226" android:pathData="M48.95,48.0 L47.75,48.0 A5.25,5.25 0 0 1 53.0,53.25 L53.0,82.75 A5.25,5.25 0 0 1 47.75,88.0 L47.75,88.0 A5.25,5.25 0 0 1 42.5,82.75 L42.5,53.25 A5.25,5.25 0 0 1 48.95,48.0 Z"/>
+    <path android:fillColor="#012226" android:pathData="M64.65,34.0 L62.25,34.0 A5.25,5.25 0 0 1 67.5,39.25 L67.5,82.75 A5.25,5.25 0 0 1 62.25,88.0 L62.25,88.0 A5.25,5.25 0 0 1 57.0,82.75 L57.0,39.25 A5.25,5.25 0 0 1 64.65,34.0 Z"/>
+    <path android:fillColor="#012226" android:pathData="M80.35,22.0 L76.75,22.0 A5.25,5.25 0 0 1 82.0,27.25 L82.0,82.75 A5.25,5.25 0 0 1 76.75,88.0 L76.75,88.0 A5.25,5.25 0 0 1 71.5,82.75 L71.5,27.25 A5.25,5.25 0 0 1 80.35,22.0 Z"/>
+    <path android:fillColor="#012226" android:pathData="M96.05,12.0 L91.25,12.0 A5.25,5.25 0 0 1 96.5,17.25 L96.5,82.75 A5.25,5.25 0 0 1 91.25,88.0 L91.25,88.0 A5.25,5.25 0 0 1 86.0,82.75 L86.0,17.25 A5.25,5.25 0 0 1 96.05,12.0 Z"/></vector>

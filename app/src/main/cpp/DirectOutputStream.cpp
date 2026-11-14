@@ -9,7 +9,7 @@
 #include <cstring>
 #include <vector>
 
-namespace lastwave::audio {
+namespace aelokia::audio {
 namespace {
 
 constexpr const char* kTag = "DirectOutputStream";
@@ -417,4 +417,4 @@ void DirectOutputStream::onErrorAfterClose(oboe::AudioStream*, oboe::Result erro
     started_.store(false, std::memory_order_release);
 }
 
-}  // namespace lastwave::audio
+}  // namespace aelokia::audio

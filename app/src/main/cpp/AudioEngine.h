@@ -14,7 +14,7 @@
 #include <mutex>
 #include <vector>
 
-namespace lastwave::audio {
+namespace aelokia::audio {
 
 class AudioEngine final : public oboe::AudioStreamDataCallback,
                           public oboe::AudioStreamErrorCallback {
@@ -190,4 +190,4 @@ private:
     std::size_t underrunDecayIntervalFrames_{0};
 };
 
-}  // namespace lastwave::audio
+}  // namespace aelokia::audio

@@ -1,4 +1,4 @@
-// JNI surface for com.lastwave.app.playback.InternalDirectStream.
+// JNI surface for com.aelokia.music.playback.InternalDirectStream.
 
 #include "DirectOutputStream.h"
 
@@ -9,8 +9,8 @@
 
 namespace {
 
-using lastwave::audio::DirectOutputStream;
-using lastwave::audio::DirectProbe;
+using aelokia::audio::DirectOutputStream;
+using aelokia::audio::DirectProbe;
 
 DirectOutputStream* fromHandle(jlong handle) noexcept {
     return reinterpret_cast<DirectOutputStream*>(static_cast<std::uintptr_t>(handle));
@@ -25,7 +25,7 @@ jintArray toIntArray(JNIEnv* env, const jint* values, jsize count) {
 }  // namespace
 
 extern "C" JNIEXPORT jintArray JNICALL
-Java_com_lastwave_app_playback_InternalDirectStream_nativeProbe(
+Java_com_aelokia_music_playback_InternalDirectStream_nativeProbe(
     JNIEnv* env,
     jclass,
     jint channelCount) {
@@ -45,17 +45,17 @@ Java_com_lastwave_app_playback_InternalDirectStream_nativeProbe(
 }
 
 extern "C" JNIEXPORT jlong JNICALL
-Java_com_lastwave_app_playback_InternalDirectStream_nativeCreate(JNIEnv*, jclass) {
+Java_com_aelokia_music_playback_InternalDirectStream_nativeCreate(JNIEnv*, jclass) {
     return static_cast<jlong>(reinterpret_cast<std::uintptr_t>(new (std::nothrow) DirectOutputStream()));
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_com_lastwave_app_playback_InternalDirectStream_nativeDestroy(JNIEnv*, jclass, jlong handle) {
+Java_com_aelokia_music_playback_InternalDirectStream_nativeDestroy(JNIEnv*, jclass, jlong handle) {
     delete fromHandle(handle);
 }
 
 extern "C" JNIEXPORT jint JNICALL
-Java_com_lastwave_app_playback_InternalDirectStream_nativeOpen(
+Java_com_aelokia_music_playback_InternalDirectStream_nativeOpen(
     JNIEnv*,
     jclass,
     jlong handle,
@@ -63,34 +63,34 @@ Java_com_lastwave_app_playback_InternalDirectStream_nativeOpen(
     jint channelCount,
     jint encoding) {
     auto* stream = fromHandle(handle);
-    if (stream == nullptr) return lastwave::audio::kOpenBadArgs;
+    if (stream == nullptr) return aelokia::audio::kOpenBadArgs;
     return stream->open(sampleRate, channelCount, encoding);
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_com_lastwave_app_playback_InternalDirectStream_nativeClose(JNIEnv*, jclass, jlong handle) {
+Java_com_aelokia_music_playback_InternalDirectStream_nativeClose(JNIEnv*, jclass, jlong handle) {
     if (auto* stream = fromHandle(handle)) stream->close();
 }
 
 extern "C" JNIEXPORT jboolean JNICALL
-Java_com_lastwave_app_playback_InternalDirectStream_nativeStart(JNIEnv*, jclass, jlong handle) {
+Java_com_aelokia_music_playback_InternalDirectStream_nativeStart(JNIEnv*, jclass, jlong handle) {
     auto* stream = fromHandle(handle);
     return stream != nullptr && stream->start() ? JNI_TRUE : JNI_FALSE;
 }
 
 extern "C" JNIEXPORT jboolean JNICALL
-Java_com_lastwave_app_playback_InternalDirectStream_nativePause(JNIEnv*, jclass, jlong handle) {
+Java_com_aelokia_music_playback_InternalDirectStream_nativePause(JNIEnv*, jclass, jlong handle) {
     auto* stream = fromHandle(handle);
     return stream != nullptr && stream->pause() ? JNI_TRUE : JNI_FALSE;
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_com_lastwave_app_playback_InternalDirectStream_nativeFlush(JNIEnv*, jclass, jlong handle) {
+Java_com_aelokia_music_playback_InternalDirectStream_nativeFlush(JNIEnv*, jclass, jlong handle) {
     if (auto* stream = fromHandle(handle)) stream->flush();
 }
 
 extern "C" JNIEXPORT jint JNICALL
-Java_com_lastwave_app_playback_InternalDirectStream_nativeWrite(
+Java_com_aelokia_music_playback_InternalDirectStream_nativeWrite(
     JNIEnv* env,
     jclass,
     jlong handle,
@@ -107,7 +107,7 @@ Java_com_lastwave_app_playback_InternalDirectStream_nativeWrite(
 }
 
 extern "C" JNIEXPORT jlongArray JNICALL
-Java_com_lastwave_app_playback_InternalDirectStream_nativeCounters(JNIEnv* env, jclass, jlong handle) {
+Java_com_aelokia_music_playback_InternalDirectStream_nativeCounters(JNIEnv* env, jclass, jlong handle) {
     auto* stream = fromHandle(handle);
     const jlong values[] = {
         stream != nullptr ? stream->consumedFrames() : 0,
@@ -122,7 +122,7 @@ Java_com_lastwave_app_playback_InternalDirectStream_nativeCounters(JNIEnv* env, 
 }
 
 extern "C" JNIEXPORT jintArray JNICALL
-Java_com_lastwave_app_playback_InternalDirectStream_nativeInfo(JNIEnv* env, jclass, jlong handle) {
+Java_com_aelokia_music_playback_InternalDirectStream_nativeInfo(JNIEnv* env, jclass, jlong handle) {
     auto* stream = fromHandle(handle);
     const jint values[] = {
         stream != nullptr ? stream->sampleRate() : 0,

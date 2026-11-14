@@ -1,12 +1,12 @@
 name: Feature Request
-description: Suggest a new feature or improvement for LastWave
+description: Suggest a new feature or improvement for Aelokia
 title: "[Feature]: "
 labels: ["enhancement"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thank you for suggesting improvements to LastWave.
+        Thank you for suggesting improvements to Aelokia.
   - type: textarea
     id: problem
     attributes:

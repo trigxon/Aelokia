@@ -2,7 +2,7 @@
 
 ## Supported Versions
 
-Security fixes are provided for the latest stable release of LastWave.
+Security fixes are provided for the latest stable release of Aelokia.
 
 | Version | Supported          |
 | ------- | ------------------ |
@@ -11,7 +11,7 @@ Security fixes are provided for the latest stable release of LastWave.
 
 ## Reporting a Vulnerability
 
-If you discover a security vulnerability in LastWave, please report it privately rather than creating a public issue.
+If you discover a security vulnerability in Aelokia, please report it privately rather than creating a public issue.
 
 ### How to Report
 * Reach out privately to the maintainers on Telegram:
@@ -29,4 +29,4 @@ If you discover a security vulnerability in LastWave, please report it privately
 * **Assessment & mitigation plan:** Within 5 business days.
 * **Public disclosure:** Coordinated after a patched release is published.
 
-Thank you for helping keep LastWave secure for all users.
+Thank you for helping keep Aelokia secure for all users.

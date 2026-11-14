@@ -1,5 +1,5 @@
 /**
- * SecretsBridge.cpp — Native secret vault for LastWave.
+ * SecretsBridge.cpp — Native secret vault for Aelokia.
  *
  * Build-time secret injection writes `SecretsBridge_generated.h` (gitignored)
  * bound to the signing certificate's SHA-256 digest.
@@ -8,7 +8,7 @@
  *   - Secret encrypted at build time using a keystream derived from the
  *     signing certificate's SHA-256 fingerprint + salt, split into XOR fragments.
  *   - Raw secret never enters Java bytecode / DEX; signing runs in native C++.
- *   - Package allowlist (`com.lastwave.app` and `com.tencent.qqmusic` for vivo)
+ *   - Package allowlist (`com.aelokia.music` and `com.tencent.qqmusic` for vivo)
  *     and signing certificate SHA-256 verification.
  *   - TracerPid anti-debugging enforced on non-debuggable builds.
  *   - Volatile stack scrubbing of secret buffers immediately after HMAC.
@@ -222,7 +222,7 @@ static bool verifyCallerSignature(JNIEnv* env, jobject context, uint8_t outCertS
     // Package allowlist: standard client + vivo Origin Island build.
     const char* pkgChars = env->GetStringUTFChars(packageName, nullptr);
     bool pkgOk = pkgChars && (
-        strcmp(pkgChars, "com.lastwave.app") == 0 ||
+        strcmp(pkgChars, "com.aelokia.music") == 0 ||
         strcmp(pkgChars, "com.tencent.qqmusic") == 0
     );
     if (pkgChars) env->ReleaseStringUTFChars(packageName, pkgChars);
@@ -404,7 +404,7 @@ static size_t reconstructClientSecret(
 }  // namespace
 
 extern "C" JNIEXPORT jstring JNICALL
-Java_com_lastwave_app_data_lossless_NativeSecrets_nativeSignAddonRequest(
+Java_com_aelokia_music_data_lossless_NativeSecrets_nativeSignAddonRequest(
     JNIEnv* env,
     jclass,
     jobject context,

@@ -66,7 +66,7 @@
 ## [5.0.0] - 2026-10-30
 
 ### Added & Improved
-- **LastWave Jam (Listen Together & Live Chat):** Host or join real-time synchronized listening rooms with friends, featuring low-latency playback sync, shared queue control, and built-in live room chat.
+- **Aelokia Jam (Listen Together & Live Chat):** Host or join real-time synchronized listening rooms with friends, featuring low-latency playback sync, shared queue control, and built-in live room chat.
 - **Synced Music & Podcast Videos (With Lossless Audio):** Watch full Official Music Videos and video podcasts directly inside the player via a native high-frame-rate video surface, seamlessly synchronized to your active Hi-Res Lossless FLAC or Opus audio stream without sacrificing audio fidelity.
 - **Native Spotify Integration & Canvas:** Connect your Spotify account for native one-tap playlist and liked-track transfers alongside looping high-resolution Spotify Canvas visuals inside Now Playing.
 - **Full Podcast Support:** Browse, stream, and follow podcast shows and episodes with dedicated episode queues, chapter navigation, and persistent playback progress.
@@ -96,7 +96,7 @@
 ## [4.3.0] - 2026-10-17
 
 ### Added & Improved
-- **Share Lyrics Card:** Select up to 5 lines from synced or plain lyrics to generate styled lyric cards. Choose between Song Mode (album art header + track metadata + lyrics) and Lyrics Mode (clean typography), customize with dynamic palette extraction (cover tones, dominant, muted, dark, accent, or LastWave Lime), and export via the system share sheet or save directly to Pictures/LastWave with full multilingual font rendering (Latin, Devanagari, Arabic, CJK).
+- **Share Lyrics Card:** Select up to 5 lines from synced or plain lyrics to generate styled lyric cards. Choose between Song Mode (album art header + track metadata + lyrics) and Lyrics Mode (clean typography), customize with dynamic palette extraction (cover tones, dominant, muted, dark, accent, or Aelokia Lime), and export via the system share sheet or save directly to Pictures/Aelokia with full multilingual font rendering (Latin, Devanagari, Arabic, CJK).
 - **Lyrics Romanization & Translation:** Added inline romanization and real-time translation support for non-Latin scripts directly within the lyrics view.
 - **Expanded Lyrics Providers:** Integrated additional lyrics sources for broader catalog coverage, higher match rates, and more reliable synced timestamps.
 - **Faster Playback & Multi-Provider Addons:** Optimized stream initialization for faster playback startup and introduced simultaneous multi-provider addon support for an expanded, unified library.
@@ -175,8 +175,8 @@
 - **Playlist Downloads:** Added support for downloading complete playlists for offline listening, making it easier to manage and save large collections.
 - **True Bit-Perfect Playback:** Improved bit-perfect playback with untouched DAC routing, preserving the audio output path without unnecessary modification or processing.
 - **YouTube Recommendation Algorithm:** The entire recommendation system has been shifted from Last.fm to YouTube, providing a new recommendation backend while making Last.fm completely optional.
-- **Guest Login:** Added Guest Login, allowing users to use LastWave without creating or connecting an account.
-- **Native Spotify & Apple Music Playlist Import:** Added native playlist importing from Spotify and Apple Music, allowing users to bring their existing playlists directly into LastWave.
+- **Guest Login:** Added Guest Login, allowing users to use Aelokia without creating or connecting an account.
+- **Native Spotify & Apple Music Playlist Import:** Added native playlist importing from Spotify and Apple Music, allowing users to bring their existing playlists directly into Aelokia.
 
 ### Changed & Improved
 - **Playback & Audio Improvements:** Improved playback reliability, audio handling, DAC behavior, and various edge cases across the playback pipeline.
@@ -189,7 +189,7 @@
 ## Unreleased
 
 ### Fixed
-- **Playback continuing after LastWave was swiped from Recents.**
+- **Playback continuing after Aelokia was swiped from Recents.**
   `MusicPlaybackService.onTaskRemoved()` was a no-op that relied on
   `android:stopWithTask="true"`, but the service deliberately stays a
   media-playback foreground service whenever a track is loaded (even paused),
@@ -201,12 +201,12 @@
   for users who want it.
 
   Files changed:
-  `app/src/main/java/com/lastwave/app/playback/MusicPlaybackService.kt`,
-  `app/src/main/java/com/lastwave/app/playback/MusicPlayer.kt`,
-  `app/src/main/java/com/lastwave/app/data/local/SettingsPreferences.kt`,
-  `app/src/main/java/com/lastwave/app/ui/settings/SettingsViewModel.kt`,
-  `app/src/main/java/com/lastwave/app/ui/settings/SettingsScreen.kt`,
-  `app/src/main/java/com/lastwave/app/ui/settings/SettingsSearchIndex.kt`,
+  `app/src/main/java/com/aelokia/app/playback/MusicPlaybackService.kt`,
+  `app/src/main/java/com/aelokia/app/playback/MusicPlayer.kt`,
+  `app/src/main/java/com/aelokia/app/data/local/SettingsPreferences.kt`,
+  `app/src/main/java/com/aelokia/app/ui/settings/SettingsViewModel.kt`,
+  `app/src/main/java/com/aelokia/app/ui/settings/SettingsScreen.kt`,
+  `app/src/main/java/com/aelokia/app/ui/settings/SettingsSearchIndex.kt`,
   `app/src/main/res/values/strings.xml`,
   `app/src/main/AndroidManifest.xml`
 
@@ -224,9 +224,9 @@
   stacking duplicates when the tracklist loads progressively.
 
   Files changed:
-  `app/src/main/java/com/lastwave/app/ui/album/AlbumViewModel.kt`
-  `app/src/main/java/com/lastwave/app/ui/album/AlbumDetailScreen.kt`
-  `app/src/main/java/com/lastwave/app/data/playlist/PlaylistRepository.kt` (`findByTitle`)
+  `app/src/main/java/com/aelokia/app/ui/album/AlbumViewModel.kt`
+  `app/src/main/java/com/aelokia/app/ui/album/AlbumDetailScreen.kt`
+  `app/src/main/java/com/aelokia/app/data/playlist/PlaylistRepository.kt` (`findByTitle`)
 
 ### Fixed
 - **Search returning no results for Cyrillic / non-Latin queries (#102).**
@@ -239,9 +239,9 @@
   covering Cyrillic, CJK and Arabic input.
 
   Files changed:
-  `app/src/main/java/com/lastwave/app/data/music/TextMatch.kt` (new),
-  `app/src/main/java/com/lastwave/app/data/music/InnerTubeMusicApi.kt`,
-  `app/src/test/java/com/lastwave/app/data/music/TextMatchTest.kt` (new)
+  `app/src/main/java/com/aelokia/app/data/music/TextMatch.kt` (new),
+  `app/src/main/java/com/aelokia/app/data/music/InnerTubeMusicApi.kt`,
+  `app/src/test/java/com/aelokia/app/data/music/TextMatchTest.kt` (new)
 
 ### Fixed
 - **Home-screen widget stuck on the previous song (#94).**
@@ -256,8 +256,8 @@
   `WidgetUpdater` is mutex-serialized against interleaved publishers.
 
   Files changed:
-  `app/src/main/java/com/lastwave/app/service/MediaScrobbleListenerService.kt`
-  `app/src/main/java/com/lastwave/app/widget/WidgetUpdater.kt`
+  `app/src/main/java/com/aelokia/app/service/MediaScrobbleListenerService.kt`
+  `app/src/main/java/com/aelokia/app/widget/WidgetUpdater.kt`
 
 ### Fixed
 - **Logged-out YouTube Music playlists collapsing to a dead "Tap Retry" error.**
@@ -268,7 +268,7 @@
   the same failure. Continuation failures now keep the collected prefix and
   return it with `isComplete = false` (null is kept only when zero tracks
   loaded, preserving every caller's existing contract); failures are logged
-  to logcat under `LastWavePlaylist` with browseId + stage for diagnosis.
+  to logcat under `AelokiaPlaylist` with browseId + stage for diagnosis.
   `FeedPlaylistDetailViewModel` shows truncated results with an inline
   "Some tracks couldn't load. Retry." affordance instead of the dead error,
   and `YtMusicLibraryManager` no longer poisons the disk cache / track
@@ -276,14 +276,14 @@
   open).
 
   Files changed:
-  `app/src/main/java/com/lastwave/app/data/music/InnerTubeMusicApi.kt`
-  `app/src/main/java/com/lastwave/app/ui/feed/FeedPlaylistDetailViewModel.kt`
-  `app/src/main/java/com/lastwave/app/data/ytmusic/YtMusicLibraryManager.kt`
+  `app/src/main/java/com/aelokia/app/data/music/InnerTubeMusicApi.kt`
+  `app/src/main/java/com/aelokia/app/ui/feed/FeedPlaylistDetailViewModel.kt`
+  `app/src/main/java/com/aelokia/app/data/ytmusic/YtMusicLibraryManager.kt`
 
 ### Author: musaibbhat120605
 **Date:** September 16, 2026
 
-###Musaib Bhat will step down as the developer of LastWave on 16 September 2026. His contributions have been invaluable, and his work will always remain a cornerstone for our community.
+###Musaib Bhat will step down as the developer of Aelokia on 16 September 2026. His contributions have been invaluable, and his work will always remain a cornerstone for our community.
 
 #### Added
 - **SongPlayStatsEntity + SongPlayStatsDao** — local per-track listening stats (total play time, skip count, play count, last played).
@@ -318,8 +318,8 @@
   session — leaving it restorable on the next launch.
 
   Files changed:
-  `app/src/main/java/com/lastwave/app/playback/MusicPlaybackService.kt`,
-  `app/src/main/java/com/lastwave/app/playback/MusicPlayer.kt`
+  `app/src/main/java/com/aelokia/app/playback/MusicPlaybackService.kt`,
+  `app/src/main/java/com/aelokia/app/playback/MusicPlayer.kt`
 
 - **Songs silently disappearing from the Home listing during background polling.** (Fix by [@musaibbhat120605](https://github.com/musaibbhat120605))
 
@@ -340,7 +340,7 @@
   has already legitimately loaded into view.
 
   Files changed:
-  `app/src/main/java/com/lastwave/app/ui/home/HomeViewModel.kt`
+  `app/src/main/java/com/aelokia/app/ui/home/HomeViewModel.kt`
 
 - **Duplicate/overlapping "now playing" notification on Android 10 (One UI 2.x).**
   `buildNotification()` used `Notification.DecoratedMediaCustomViewStyle`
@@ -360,28 +360,28 @@
 
 ### Added
 - **Offline playback priority across all screens (Fixes #31).**
-  `MusicPlayer.resolveTrackAudioStream()` now checks the local Room database (`DownloadedTrackDao`) and verifies file presence on disk before attempting remote network resolution (Lossless / YouTube Music / InnerTube). When a track has already been downloaded, LastWave plays the local media file directly without making network calls, enabling seamless offline playback across Home, Search, Playlists, Album, and Artist screens and saving cellular data when online.
+  `MusicPlayer.resolveTrackAudioStream()` now checks the local Room database (`DownloadedTrackDao`) and verifies file presence on disk before attempting remote network resolution (Lossless / YouTube Music / InnerTube). When a track has already been downloaded, Aelokia plays the local media file directly without making network calls, enabling seamless offline playback across Home, Search, Playlists, Album, and Artist screens and saving cellular data when online.
 
   Files changed:
-  `app/src/main/java/com/lastwave/app/playback/MusicPlayer.kt`
+  `app/src/main/java/com/aelokia/app/playback/MusicPlayer.kt`
 
 - **Download state awareness and duplicate download prevention.**
   - Added `DownloadedTrackDao.findByTrackKey` and deduplication checks in `TrackDownloadManager.downloadTrack` to prevent duplicate download jobs, redundant network requests, and duplicate files (e.g. `(1).flac`) in MediaStore.
   - The 3-dot context menu sheet (`TrackContextMenuSheet`) now dynamically reflects the track's status (`Downloaded` with check icon, `Downloading…`, or `Download (Max Quality)`), giving instant visual feedback and preventing accidental re-downloads.
 
   Files changed:
-  `app/src/main/java/com/lastwave/app/data/local/db/DownloadedTrackDao.kt`
-  `app/src/main/java/com/lastwave/app/data/download/TrackDownloadManager.kt`
-  `app/src/main/java/com/lastwave/app/ui/common/TrackContextMenuSheet.kt`
+  `app/src/main/java/com/aelokia/app/data/local/db/DownloadedTrackDao.kt`
+  `app/src/main/java/com/aelokia/app/data/download/TrackDownloadManager.kt`
+  `app/src/main/java/com/aelokia/app/ui/common/TrackContextMenuSheet.kt`
 
 - **Direct navigation from download notifications to the Downloads screen.**
   `TrackDownloadManager` now fires pending intents with `ACTION_VIEW_DOWNLOADS` targeting `DownloadsScreen` (`AppRoute.Downloads`). Integrated an `AppRouteNavigator` singleton and `AppRouteNavBridge` into `NavGraph` and `MainActivity` so tapping download notifications opens the Downloads screen directly instead of only bringing the app to the foreground.
 
   Files changed:
-  `app/src/main/java/com/lastwave/app/data/download/TrackDownloadManager.kt`
-  `app/src/main/java/com/lastwave/app/MainActivity.kt`
-  `app/src/main/java/com/lastwave/app/ui/navigation/AppRouteNavigator.kt`
-  `app/src/main/java/com/lastwave/app/ui/navigation/NavGraph.kt`
+  `app/src/main/java/com/aelokia/app/data/download/TrackDownloadManager.kt`
+  `app/src/main/java/com/aelokia/app/MainActivity.kt`
+  `app/src/main/java/com/aelokia/app/ui/navigation/AppRouteNavigator.kt`
+  `app/src/main/java/com/aelokia/app/ui/navigation/NavGraph.kt`
 
 ## 2026-09-02 — musaibbhat120605
 
@@ -405,7 +405,7 @@
     for other muxed sources), the old end-of-file append is used instead,
     since rewriting `Cues` byte offsets safely is out of scope for this fix.
 
-  Files changed: `app/src/main/java/com/lastwave/app/data/download/AudioTagWriter.kt`
+  Files changed: `app/src/main/java/com/aelokia/app/data/download/AudioTagWriter.kt`
 
 ### Fixed
 - **Home screen (Last.fm) lag / stutter.**
@@ -426,8 +426,8 @@
     500 entries instead of growing it indefinitely.
 
   Files changed:
-  `app/src/main/java/com/lastwave/app/ui/home/HomeViewModel.kt`,
-  `app/src/main/java/com/lastwave/app/ui/home/HomeScreen.kt`
+  `app/src/main/java/com/aelokia/app/ui/home/HomeViewModel.kt`,
+  `app/src/main/java/com/aelokia/app/ui/home/HomeScreen.kt`
 
 ### Fixed
 - **Downloaded tracks appearing twice in the Downloads list.**
@@ -455,9 +455,9 @@
     of duplicating it.
 
   Files changed:
-  `app/src/main/java/com/lastwave/app/data/local/db/DownloadedTrackEntity.kt`,
-  `app/src/main/java/com/lastwave/app/di/DatabaseModule.kt`,
-  `app/src/main/java/com/lastwave/app/data/download/TrackDownloadManager.kt`
+  `app/src/main/java/com/aelokia/app/data/local/db/DownloadedTrackEntity.kt`,
+  `app/src/main/java/com/aelokia/app/di/DatabaseModule.kt`,
+  `app/src/main/java/com/aelokia/app/data/download/TrackDownloadManager.kt`
 
 ### Fixed
 - **Skipping to the next track did nothing when playing from Downloads.**
@@ -474,4 +474,4 @@
   Next/previous now move through the rest of your downloads normally.
 
   Files changed:
-  `app/src/main/java/com/lastwave/app/ui/settings/DownloadsViewModel.kt`
+  `app/src/main/java/com/aelokia/app/ui/settings/DownloadsViewModel.kt`

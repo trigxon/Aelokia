@@ -5,7 +5,7 @@
 #include <cstdint>
 #include <vector>
 
-namespace lastwave::dsd {
+namespace aelokia::dsd {
 
 /**
  * Linear-phase Kaiser-windowed FIR decimator converting 1-bit delta-sigma
@@ -74,4 +74,4 @@ private:
     float convolveChannel(std::size_t ch) const noexcept;
 };
 
-}  // namespace lastwave::dsd
+}  // namespace aelokia::dsd

@@ -1,12 +1,12 @@
-# AGENTS.md — LastWave (Android)
+# AGENTS.md — Aelokia (Android)
 
 Rules for every agent working in this repo. Read this before touching code.
 For any UI or visual work, also read [DESIGN.md](DESIGN.md).
 
 ## 0. App overview
 
-LastWave is a native Android YouTube Music client written in Kotlin and Jetpack
-Compose (`com.lastwave.app`, version `5.2.1` / code `33`). Alongside YouTube
+Aelokia is a native Android YouTube Music client written in Kotlin and Jetpack
+Compose (`com.aelokia.music`, version `5.2.1` / code `33`). Alongside YouTube
 Music browsing and streaming, it includes offline downloads, local device audio,
 Spotify imports/Canvas, Last.fm scrobbling and stats, podcasts, Listen Together
 (`jam`), Discord Rich Presence, Google Cast, Android Auto, Glance home-screen
@@ -39,16 +39,16 @@ Automix transitions, lossless addons, and Bit-Perfect USB DAC output).
   and C++20 JNI (`app/src/main/cpp/`, 16 KB page-aligned) bundling `libsoxr`
   `0.1.3`, `DspProcessor`, `ParametricEq`, `DirectOutputStream`, and `automix/`.
 - **Tests:** JUnit 4, Truth, MockK, Robolectric, `kotlinx-coroutines-test` under
-  `app/src/test/java/com/lastwave/app/`.
+  `app/src/test/java/com/aelokia/app/`.
 
-### Architecture & package map (`app/src/main/java/com/lastwave/app/`)
+### Architecture & package map (`app/src/main/java/com/aelokia/app/`)
 
 - **Entry points & navigation:**
-  - `LastWaveApplication` (`@HiltAndroidApp`, `ImageLoaderFactory`, installs
+  - `AelokiaApplication` (`@HiltAndroidApp`, `ImageLoaderFactory`, installs
     `Diagnostics`, locale wrapping, BotGuard/stream prewarm, background sync).
   - `MainShellActivity` in `MainActivity.kt` (targeted by `.MainActivity` and
     dynamic-icon `<activity-alias>` launcher entries; `MainActivity` class is a
-    legacy alias) wraps `LastWaveNavHost` (`ui/navigation/NavGraph.kt`, routes in
+    legacy alias) wraps `AelokiaNavHost` (`ui/navigation/NavGraph.kt`, routes in
     `ui/navigation/Screen.kt`) inside the mini/full player overlay `PlayerHost`.
   - `MainShell` (`ui/shell/MainShell.kt`) hosts a 3-tab `HorizontalPager`
     (`FEED` -> `FeedScreen`, `STATS` -> `HomeScreen`, `PLAYLISTS` ->
@@ -125,7 +125,7 @@ If the user says "don't build", do not run Gradle. Verify by reading the code.
   24 needs a `Build.VERSION.SDK_INT` guard or an AndroidX compat call.
   `Notification.Builder.setColorized` (26) has crashed Android 7 before.
 - **vivo build** (`-PvivoOrigin=true`) ships as package `com.tencent.qqmusic`. Do not
-  assume `context.packageName == "com.lastwave.app"`.
+  assume `context.packageName == "com.aelokia.music"`.
 - **Native libs must be 16 KB-aligned.** `libffmpegJNI.so` (media3-ffmpeg-decoder
   1.2.1+1) is not, so FFmpeg is gated by `FfmpegCompat.isUsable`.
 - **InnerTubeX is called by reflection** (`InnerTubeXStreamExtractor`) because its
@@ -158,9 +158,9 @@ If the user says "don't build", do not run Gradle. Verify by reading the code.
 
 ## 5. Diagnostics
 
-User reports come as `lastwave-diagnostics-*.txt`. Extract with `strings`.
+User reports come as `aelokia-diagnostics-*.txt`. Extract with `strings`.
 Native-crash tombstones are decoded by `diagnostics/TombstoneSummary.kt`;
-`LastWaveTraffic`/`LastWaveStream` lines show every network call and its status.
+`AelokiaTraffic`/`AelokiaStream` lines show every network call and its status.
 Find the evidence in the log before writing a fix, and quote it in the summary.
 
 ## 6. Reporting back

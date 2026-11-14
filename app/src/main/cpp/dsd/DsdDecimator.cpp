@@ -4,7 +4,7 @@
 #include <cmath>
 #include <limits>
 
-namespace lastwave::dsd {
+namespace aelokia::dsd {
 
 namespace {
 
@@ -190,4 +190,4 @@ std::size_t DsdDecimator::processPlanar(
     return produced;
 }
 
-}  // namespace lastwave::dsd
+}  // namespace aelokia::dsd

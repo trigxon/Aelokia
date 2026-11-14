@@ -41,7 +41,7 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
         android:maxSdkVersion="32" />
     <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
-    <!-- WorkManager (pulled in by Glance widgets) adds a boot receiver. LastWave
+    <!-- WorkManager (pulled in by Glance widgets) adds a boot receiver. Aelokia
          schedules no persistent work and must never start at boot, so drop it:
          auto-start-at-boot is a key signal antivirus "dropper" heuristics use. -->
     <uses-permission
@@ -53,7 +53,7 @@
         android:required="false" />
 
     <application
-        android:name=".LastWaveApplication"
+        android:name=".AelokiaApplication"
         android:allowBackup="true"
         android:fullBackupContent="@xml/backup_rules"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -62,7 +62,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.LastWave.Splash"
+        android:theme="@style/Theme.Aelokia.Splash"
         android:usesCleartextTraffic="false"
         android:networkSecurityConfig="@xml/network_security_config"
         android:localeConfig="@xml/locales_config"
@@ -72,7 +72,7 @@
 
         <meta-data
             android:name="com.google.android.gms.cast.framework.OPTIONS_PROVIDER_CLASS_NAME"
-            android:value="com.lastwave.app.playback.cast.LastWaveCastOptionsProvider" />
+            android:value="com.aelokia.music.playback.cast.AelokiaCastOptionsProvider" />
         <meta-data
             android:name="com.google.android.gms.car.application"
             android:resource="@xml/automotive_app_desc" />
@@ -84,7 +84,7 @@
             android:name=".MainShellActivity"
             android:exported="true"
             android:launchMode="singleTask"
-            android:theme="@style/Theme.LastWave.Splash"
+            android:theme="@style/Theme.Aelokia.Splash"
             android:configChanges="orientation|screenSize|keyboardHidden|uiMode"
             android:windowSoftInputMode="adjustResize">
 
@@ -106,19 +106,19 @@
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="lastwave" android:host="auth-callback" />
+                <data android:scheme="aelokia" android:host="auth-callback" />
             </intent-filter>
 
-            <!-- LastWave Jam deep links (lastwave://jam?code=... and lastwave://sync?code=...) -->
+            <!-- Aelokia Jam deep links (aelokia://jam?code=... and aelokia://sync?code=...) -->
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="lastwave" android:host="jam" />
-                <data android:scheme="lastwave" android:host="sync" />
+                <data android:scheme="aelokia" android:host="jam" />
+                <data android:scheme="aelokia" android:host="sync" />
             </intent-filter>
 
-            <!-- LastWave Jam web invite deep links (https://jam.clashgram.org/?code=...) -->
+            <!-- Aelokia Jam web invite deep links (https://jam.clashgram.org/?code=...) -->
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -347,8 +347,8 @@
             android:name=".data.download.DownloadCancelReceiver"
             android:exported="false">
             <intent-filter>
-                <action android:name="com.lastwave.app.ACTION_CANCEL_DOWNLOAD" />
-                <action android:name="com.lastwave.app.ACTION_RECONNECT_DOWNLOAD" />
+                <action android:name="com.aelokia.music.ACTION_CANCEL_DOWNLOAD" />
+                <action android:name="com.aelokia.music.ACTION_RECONNECT_DOWNLOAD" />
             </intent-filter>
         </receiver>
 

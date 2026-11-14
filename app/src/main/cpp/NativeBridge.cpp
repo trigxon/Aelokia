@@ -13,8 +13,8 @@
 
 namespace {
 
-using lastwave::audio::AudioEngine;
-using lastwave::audio::PcmFormat;
+using aelokia::audio::AudioEngine;
+using aelokia::audio::PcmFormat;
 
 AudioEngine* fromHandle(jlong handle) noexcept {
     return reinterpret_cast<AudioEngine*>(static_cast<std::uintptr_t>(handle));
@@ -33,7 +33,7 @@ bool parseFormat(jint value, PcmFormat& format) noexcept {
 }  // namespace
 
 extern "C" JNIEXPORT jlong JNICALL
-Java_com_lastwave_app_playback_NativeAudioEngine_nativeCreate(
+Java_com_aelokia_music_playback_NativeAudioEngine_nativeCreate(
     JNIEnv*,
     jobject) {
     const auto pointer = reinterpret_cast<std::uintptr_t>(new (std::nothrow) AudioEngine());
@@ -41,7 +41,7 @@ Java_com_lastwave_app_playback_NativeAudioEngine_nativeCreate(
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_com_lastwave_app_playback_NativeAudioEngine_nativeDestroy(
+Java_com_aelokia_music_playback_NativeAudioEngine_nativeDestroy(
     JNIEnv*,
     jobject,
     jlong handle) {
@@ -49,7 +49,7 @@ Java_com_lastwave_app_playback_NativeAudioEngine_nativeDestroy(
 }
 
 extern "C" JNIEXPORT jboolean JNICALL
-Java_com_lastwave_app_playback_NativeAudioEngine_nativeStart(
+Java_com_aelokia_music_playback_NativeAudioEngine_nativeStart(
     JNIEnv*,
     jobject,
     jlong handle,
@@ -66,7 +66,7 @@ Java_com_lastwave_app_playback_NativeAudioEngine_nativeStart(
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_com_lastwave_app_playback_NativeAudioEngine_nativeStop(
+Java_com_aelokia_music_playback_NativeAudioEngine_nativeStop(
     JNIEnv*,
     jobject,
     jlong handle) {
@@ -74,7 +74,7 @@ Java_com_lastwave_app_playback_NativeAudioEngine_nativeStop(
 }
 
 extern "C" JNIEXPORT jboolean JNICALL
-Java_com_lastwave_app_playback_NativeAudioEngine_nativeIsRunning(
+Java_com_aelokia_music_playback_NativeAudioEngine_nativeIsRunning(
     JNIEnv*,
     jobject,
     jlong handle) {
@@ -83,7 +83,7 @@ Java_com_lastwave_app_playback_NativeAudioEngine_nativeIsRunning(
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_com_lastwave_app_playback_NativeAudioEngine_nativeFlushOutput(
+Java_com_aelokia_music_playback_NativeAudioEngine_nativeFlushOutput(
     JNIEnv*,
     jobject,
     jlong handle) {
@@ -91,7 +91,7 @@ Java_com_lastwave_app_playback_NativeAudioEngine_nativeFlushOutput(
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_com_lastwave_app_playback_NativeAudioEngine_nativeSetPlaying(
+Java_com_aelokia_music_playback_NativeAudioEngine_nativeSetPlaying(
     JNIEnv*,
     jobject,
     jlong handle,
@@ -102,7 +102,7 @@ Java_com_lastwave_app_playback_NativeAudioEngine_nativeSetPlaying(
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_com_lastwave_app_playback_NativeAudioEngine_nativeSetOutputVolume(
+Java_com_aelokia_music_playback_NativeAudioEngine_nativeSetOutputVolume(
     JNIEnv*,
     jobject,
     jlong handle,
@@ -113,7 +113,7 @@ Java_com_lastwave_app_playback_NativeAudioEngine_nativeSetOutputVolume(
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_com_lastwave_app_playback_NativeAudioEngine_nativeSetStudioMasterClarity(
+Java_com_aelokia_music_playback_NativeAudioEngine_nativeSetStudioMasterClarity(
     JNIEnv*,
     jobject,
     jlong handle,
@@ -124,54 +124,54 @@ Java_com_lastwave_app_playback_NativeAudioEngine_nativeSetStudioMasterClarity(
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_com_lastwave_app_playback_NativeAudioEngine_nativeSetClarityWet(
+Java_com_aelokia_music_playback_NativeAudioEngine_nativeSetClarityWet(
     JNIEnv*,
     jobject,
     jlong handle,
     jfloat wet) {
     if (fromHandle(handle) == nullptr) return;
-    lastwave::audio::DspProcessor::broadcastClarityWet(wet);
+    aelokia::audio::DspProcessor::broadcastClarityWet(wet);
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_com_lastwave_app_playback_NativeAudioEngine_nativeSetClarityTrims(
+Java_com_aelokia_music_playback_NativeAudioEngine_nativeSetClarityTrims(
     JNIEnv* env,
     jobject,
     jlong handle,
     jfloatArray trimsDb) {
     if (fromHandle(handle) == nullptr || trimsDb == nullptr ||
         env->GetArrayLength(trimsDb) !=
-            static_cast<jsize>(lastwave::audio::DspProcessor::kClarityTrimCount)) {
+            static_cast<jsize>(aelokia::audio::DspProcessor::kClarityTrimCount)) {
         return;
     }
-    std::array<float, lastwave::audio::DspProcessor::kClarityTrimCount> trims{};
+    std::array<float, aelokia::audio::DspProcessor::kClarityTrimCount> trims{};
     env->GetFloatArrayRegion(trimsDb, 0, static_cast<jsize>(trims.size()), trims.data());
     if (env->ExceptionCheck()) return;
-    lastwave::audio::DspProcessor::broadcastClarityTrims(trims.data(), trims.size());
+    aelokia::audio::DspProcessor::broadcastClarityTrims(trims.data(), trims.size());
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_com_lastwave_app_playback_NativeAudioEngine_nativeSetClarityPreset(
+Java_com_aelokia_music_playback_NativeAudioEngine_nativeSetClarityPreset(
     JNIEnv*,
     jobject,
     jlong handle,
     jint preset) {
     if (fromHandle(handle) == nullptr) return;
-    lastwave::audio::DspProcessor::broadcastClarityPreset(preset);
+    aelokia::audio::DspProcessor::broadcastClarityPreset(preset);
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_com_lastwave_app_playback_NativeAudioEngine_nativeSetClarityAtmosBypass(
+Java_com_aelokia_music_playback_NativeAudioEngine_nativeSetClarityAtmosBypass(
     JNIEnv*,
     jobject,
     jlong handle,
     jboolean enabled) {
     if (fromHandle(handle) == nullptr) return;
-    lastwave::audio::DspProcessor::broadcastClarityAtmosBypass(enabled == JNI_TRUE);
+    aelokia::audio::DspProcessor::broadcastClarityAtmosBypass(enabled == JNI_TRUE);
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_com_lastwave_app_playback_NativeAudioEngine_nativeSetBitPerfect(
+Java_com_aelokia_music_playback_NativeAudioEngine_nativeSetBitPerfect(
     JNIEnv*,
     jobject,
     jlong handle,
@@ -182,7 +182,7 @@ Java_com_lastwave_app_playback_NativeAudioEngine_nativeSetBitPerfect(
 }
 
 extern "C" JNIEXPORT jboolean JNICALL
-Java_com_lastwave_app_playback_NativeAudioEngine_nativeIsBitPerfect(
+Java_com_aelokia_music_playback_NativeAudioEngine_nativeIsBitPerfect(
     JNIEnv*,
     jobject,
     jlong handle) {
@@ -193,7 +193,7 @@ Java_com_lastwave_app_playback_NativeAudioEngine_nativeIsBitPerfect(
 
 
 extern "C" JNIEXPORT void JNICALL
-Java_com_lastwave_app_playback_NativeAudioEngine_nativeSetEqualizer(
+Java_com_aelokia_music_playback_NativeAudioEngine_nativeSetEqualizer(
     JNIEnv* env,
     jobject,
     jlong handle,
@@ -202,17 +202,17 @@ Java_com_lastwave_app_playback_NativeAudioEngine_nativeSetEqualizer(
     auto* engine = fromHandle(handle);
     if (engine == nullptr || gainsDb == nullptr ||
         env->GetArrayLength(gainsDb) !=
-            static_cast<jsize>(lastwave::audio::DspProcessor::kEqualizerBandCount)) {
+            static_cast<jsize>(aelokia::audio::DspProcessor::kEqualizerBandCount)) {
         return;
     }
-    std::array<float, lastwave::audio::DspProcessor::kEqualizerBandCount> gains{};
+    std::array<float, aelokia::audio::DspProcessor::kEqualizerBandCount> gains{};
     env->GetFloatArrayRegion(gainsDb, 0, static_cast<jsize>(gains.size()), gains.data());
     if (env->ExceptionCheck()) return;
     engine->setEqualizer(enabled == JNI_TRUE, gains.data(), gains.size());
 }
 
 extern "C" JNIEXPORT jboolean JNICALL
-Java_com_lastwave_app_playback_NativeAudioEngine_nativeConfigureMediaProcessor(
+Java_com_aelokia_music_playback_NativeAudioEngine_nativeConfigureMediaProcessor(
     JNIEnv*,
     jobject,
     jlong handle,
@@ -233,7 +233,7 @@ Java_com_lastwave_app_playback_NativeAudioEngine_nativeConfigureMediaProcessor(
 }
 
 extern "C" JNIEXPORT jint JNICALL
-Java_com_lastwave_app_playback_NativeAudioEngine_nativeProcessMediaPcm(
+Java_com_aelokia_music_playback_NativeAudioEngine_nativeProcessMediaPcm(
     JNIEnv* env,
     jobject,
     jlong handle,
@@ -263,7 +263,7 @@ Java_com_lastwave_app_playback_NativeAudioEngine_nativeProcessMediaPcm(
     const std::size_t frames = static_cast<std::size_t>(frameCount);
     const std::size_t channels = static_cast<std::size_t>(channelCount);
     const std::size_t inputBytesPerFrame =
-        lastwave::audio::PcmConverter::bytesPerSample(format) * channels;
+        aelokia::audio::PcmConverter::bytesPerSample(format) * channels;
     const std::size_t outputBytesPerFrame = sizeof(float) * channels;
     if (frames > std::numeric_limits<std::size_t>::max() / inputBytesPerFrame ||
         frames > std::numeric_limits<std::size_t>::max() / outputBytesPerFrame) {
@@ -296,7 +296,7 @@ Java_com_lastwave_app_playback_NativeAudioEngine_nativeProcessMediaPcm(
 }
 
 extern "C" JNIEXPORT jint JNICALL
-Java_com_lastwave_app_playback_NativeAudioEngine_nativeFlushMediaProcessor(
+Java_com_aelokia_music_playback_NativeAudioEngine_nativeFlushMediaProcessor(
     JNIEnv* env,
     jobject,
     jlong handle,
@@ -334,7 +334,7 @@ Java_com_lastwave_app_playback_NativeAudioEngine_nativeFlushMediaProcessor(
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_com_lastwave_app_playback_NativeAudioEngine_nativeResetMediaProcessor(
+Java_com_aelokia_music_playback_NativeAudioEngine_nativeResetMediaProcessor(
     JNIEnv*,
     jobject,
     jlong handle) {
@@ -344,7 +344,7 @@ Java_com_lastwave_app_playback_NativeAudioEngine_nativeResetMediaProcessor(
 }
 
 extern "C" JNIEXPORT jint JNICALL
-Java_com_lastwave_app_playback_NativeAudioEngine_nativeWritePcm(
+Java_com_aelokia_music_playback_NativeAudioEngine_nativeWritePcm(
     JNIEnv* env,
     jobject,
     jlong handle,
@@ -365,7 +365,7 @@ Java_com_lastwave_app_playback_NativeAudioEngine_nativeWritePcm(
         return 0;
     }
 
-    const std::size_t bytesPerFrame = lastwave::audio::PcmConverter::bytesPerSample(format) *
+    const std::size_t bytesPerFrame = aelokia::audio::PcmConverter::bytesPerSample(format) *
         static_cast<std::size_t>(inputChannelCount);
     const std::size_t frames = static_cast<std::size_t>(frameCount);
     if (bytesPerFrame == 0 || frames > std::numeric_limits<std::size_t>::max() / bytesPerFrame) {
@@ -390,7 +390,7 @@ Java_com_lastwave_app_playback_NativeAudioEngine_nativeWritePcm(
 }
 
 extern "C" JNIEXPORT jint JNICALL
-Java_com_lastwave_app_playback_NativeAudioEngine_nativeWriteProcessedPcm(
+Java_com_aelokia_music_playback_NativeAudioEngine_nativeWriteProcessedPcm(
     JNIEnv* env,
     jobject,
     jlong handle,
@@ -432,7 +432,7 @@ Java_com_lastwave_app_playback_NativeAudioEngine_nativeWriteProcessedPcm(
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_com_lastwave_app_playback_NativeAudioEngine_nativeFlushResampler(
+Java_com_aelokia_music_playback_NativeAudioEngine_nativeFlushResampler(
     JNIEnv*,
     jobject,
     jlong handle) {
@@ -440,7 +440,7 @@ Java_com_lastwave_app_playback_NativeAudioEngine_nativeFlushResampler(
 }
 
 extern "C" JNIEXPORT jint JNICALL
-Java_com_lastwave_app_playback_NativeAudioEngine_nativeOutputSampleRate(
+Java_com_aelokia_music_playback_NativeAudioEngine_nativeOutputSampleRate(
     JNIEnv*,
     jobject,
     jlong handle) {
@@ -449,7 +449,7 @@ Java_com_lastwave_app_playback_NativeAudioEngine_nativeOutputSampleRate(
 }
 
 extern "C" JNIEXPORT jlong JNICALL
-Java_com_lastwave_app_playback_NativeAudioEngine_nativeBufferedFrames(
+Java_com_aelokia_music_playback_NativeAudioEngine_nativeBufferedFrames(
     JNIEnv*,
     jobject,
     jlong handle) {
@@ -458,7 +458,7 @@ Java_com_lastwave_app_playback_NativeAudioEngine_nativeBufferedFrames(
 }
 
 extern "C" JNIEXPORT jlong JNICALL
-Java_com_lastwave_app_playback_NativeAudioEngine_nativeUnderrunCount(
+Java_com_aelokia_music_playback_NativeAudioEngine_nativeUnderrunCount(
     JNIEnv*,
     jobject,
     jlong handle) {
@@ -467,7 +467,7 @@ Java_com_lastwave_app_playback_NativeAudioEngine_nativeUnderrunCount(
 }
 
 extern "C" JNIEXPORT jlong JNICALL
-Java_com_lastwave_app_playback_NativeAudioEngine_nativeRenderedFrames(
+Java_com_aelokia_music_playback_NativeAudioEngine_nativeRenderedFrames(
     JNIEnv*,
     jobject,
     jlong handle) {
@@ -476,7 +476,7 @@ Java_com_lastwave_app_playback_NativeAudioEngine_nativeRenderedFrames(
 }
 
 extern "C" JNIEXPORT jint JNICALL
-Java_com_lastwave_app_playback_NativeAudioEngine_nativeRequestedSampleRate(
+Java_com_aelokia_music_playback_NativeAudioEngine_nativeRequestedSampleRate(
     JNIEnv*,
     jobject,
     jlong handle) {
@@ -485,7 +485,7 @@ Java_com_lastwave_app_playback_NativeAudioEngine_nativeRequestedSampleRate(
 }
 
 extern "C" JNIEXPORT jlong JNICALL
-Java_com_lastwave_app_playback_NativeAudioEngine_nativeStreamOpenCount(
+Java_com_aelokia_music_playback_NativeAudioEngine_nativeStreamOpenCount(
     JNIEnv*,
     jobject,
     jlong handle) {
@@ -494,7 +494,7 @@ Java_com_lastwave_app_playback_NativeAudioEngine_nativeStreamOpenCount(
 }
 
 extern "C" JNIEXPORT jlong JNICALL
-Java_com_lastwave_app_playback_NativeAudioEngine_nativeStreamRestartCount(
+Java_com_aelokia_music_playback_NativeAudioEngine_nativeStreamRestartCount(
     JNIEnv*,
     jobject,
     jlong handle) {
@@ -503,7 +503,7 @@ Java_com_lastwave_app_playback_NativeAudioEngine_nativeStreamRestartCount(
 }
 
 extern "C" JNIEXPORT jlong JNICALL
-Java_com_lastwave_app_playback_NativeAudioEngine_nativeRateAdaptationCount(
+Java_com_aelokia_music_playback_NativeAudioEngine_nativeRateAdaptationCount(
     JNIEnv*,
     jobject,
     jlong handle) {

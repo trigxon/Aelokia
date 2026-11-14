@@ -188,7 +188,7 @@ abstract class PrepareNativeBridgeTask : DefaultTask() {
 }
 
 android {
-    namespace = "com.lastwave.app"
+    namespace = "com.aelokia.music"
     compileSdk = 37
 
     val localProps = Properties().apply {
@@ -243,7 +243,7 @@ android {
     val vivoOrigin = (project.findProperty("vivoOrigin") as? String)?.toBoolean() == true
 
     defaultConfig {
-        applicationId = if (vivoOrigin) "com.tencent.qqmusic" else "com.lastwave.app"
+        applicationId = if (vivoOrigin) "com.tencent.qqmusic" else "com.aelokia.music"
         buildConfigField("boolean", "VIVO_ORIGIN", vivoOrigin.toString())
         minSdk = (project.findProperty("minSdk") as? String)?.toIntOrNull() ?: 29
         targetSdk = 35
@@ -257,10 +257,10 @@ android {
             }
         }
 
-        val lastWaveLyricsToken = resolveSecret("LASTWAVE_LYRICS_TOKEN")
-        val lastWaveLyricsUrl = resolveSecret("LASTWAVE_LYRICS_URL")
-        buildConfigField("String", "LASTWAVE_LYRICS_TOKEN", "\"$lastWaveLyricsToken\"")
-        buildConfigField("String", "LASTWAVE_LYRICS_URL", "\"$lastWaveLyricsUrl\"")
+        val aelokiaLyricsToken = resolveSecret("LASTWAVE_LYRICS_TOKEN")
+        val aelokiaLyricsUrl = resolveSecret("LASTWAVE_LYRICS_URL")
+        buildConfigField("String", "LASTWAVE_LYRICS_TOKEN", "\"$aelokiaLyricsToken\"")
+        buildConfigField("String", "LASTWAVE_LYRICS_URL", "\"$aelokiaLyricsUrl\"")
 
         externalNativeBuild {
             cmake {
@@ -505,7 +505,7 @@ dependencies {
     // Pinned to the same 1.2.1 line as exoplayer/hls to avoid binary mismatch.
     implementation("androidx.media3:media3-exoplayer-dash:1.2.1")
     // MediaBrowserServiceCompat/MediaSessionCompat bridge used by Android
-    // Auto to browse the LastWave library and control the same player.
+    // Auto to browse the Aelokia library and control the same player.
     implementation("androidx.media:media:1.7.0")
 
     // GPLv3 Media3-matched FFmpeg software decoder (distribution must comply).

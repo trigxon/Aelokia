@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.22.1)
-project(lastwave_audio LANGUAGES C CXX)
+project(aelokia_audio LANGUAGES C CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -42,7 +42,7 @@ if(NOT soxr_source_POPULATED)
 endif()
 
 add_library(
-    lastwave_audio
+    aelokia_audio
     SHARED
     AudioEngine.cpp
     DirectOutputBridge.cpp
@@ -61,14 +61,14 @@ add_library(
 )
 
 target_include_directories(
-    lastwave_audio
+    aelokia_audio
     PRIVATE
     "${CMAKE_CURRENT_SOURCE_DIR}"
     "${soxr_source_SOURCE_DIR}/src"
 )
 
 target_compile_options(
-    lastwave_audio
+    aelokia_audio
     PRIVATE
     # Debug builds had no -O flag, so the DSP ran at -O0. Keep symbols but
     # optimize the audio path; release already uses RelWithDebInfo (-O2).
@@ -81,7 +81,7 @@ target_compile_options(
 )
 
 target_link_libraries(
-    lastwave_audio
+    aelokia_audio
     PRIVATE
     oboe::oboe
     soxr

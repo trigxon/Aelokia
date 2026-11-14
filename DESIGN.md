@@ -1,4 +1,4 @@
-# DESIGN.md — LastWave UI
+# DESIGN.md — Aelokia UI
 
 For any agent doing UI work: new screens, restyles, components, motion.
 Code rules from [AGENTS.md](AGENTS.md) still apply (fewest lines, rewrite don't patch, delete what you replace).

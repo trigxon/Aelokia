@@ -5,7 +5,7 @@
 #include <cstddef>
 #include <cstdint>
 
-namespace lastwave::audio {
+namespace aelokia::audio {
 
 /**
  * Parametric equalizer (AutoEQ / manual PEQ).
@@ -120,4 +120,4 @@ private:
     std::uint32_t ditherState_{0x12345678U};
 };
 
-}  // namespace lastwave::audio
+}  // namespace aelokia::audio

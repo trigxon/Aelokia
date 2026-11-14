@@ -1,8 +1,8 @@
-HSPLcom/lastwave/app/MainActivity;->**(**)**
-HSPLcom/lastwave/app/MainShellActivity;->**(**)**
-HSPLcom/lastwave/app/LastWaveApplication;->**(**)**
-HSPLcom/lastwave/app/ui/**;->**(**)**
-HSPLcom/lastwave/app/playback/MusicPlayer**;->**(**)**
-HSPLcom/lastwave/app/playback/MusicPlaybackService**;->**(**)**
-HSPLcom/lastwave/app/data/artwork/**;->**(**)**
-Lcom/lastwave/app/ui/**;
+HSPLcom/aelokia/app/MainActivity;->**(**)**
+HSPLcom/aelokia/app/MainShellActivity;->**(**)**
+HSPLcom/aelokia/app/AelokiaApplication;->**(**)**
+HSPLcom/aelokia/app/ui/**;->**(**)**
+HSPLcom/aelokia/app/playback/MusicPlayer**;->**(**)**
+HSPLcom/aelokia/app/playback/MusicPlaybackService**;->**(**)**
+HSPLcom/aelokia/app/data/artwork/**;->**(**)**
+Lcom/aelokia/app/ui/**;

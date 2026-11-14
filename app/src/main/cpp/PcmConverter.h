@@ -6,7 +6,7 @@
 #include <cstdint>
 #include <cstring>
 
-namespace lastwave::audio {
+namespace aelokia::audio {
 
 enum class PcmFormat : std::int32_t {
     Int16 = 0,
@@ -137,4 +137,4 @@ public:
     }
 };
 
-}  // namespace lastwave::audio
+}  // namespace aelokia::audio

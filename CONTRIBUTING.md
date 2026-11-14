@@ -1,6 +1,6 @@
-# Contributing to LastWave
+# Contributing to Aelokia
 
-Thank you for your interest in contributing to LastWave. This document outlines the development workflow, code standards, and submission guidelines.
+Thank you for your interest in contributing to Aelokia. This document outlines the development workflow, code standards, and submission guidelines.
 
 ## Code of Conduct
 
@@ -16,8 +16,8 @@ All contributors are expected to adhere to the [Code of Conduct](CODE_OF_CONDUCT
 
 ### Cloning the Repository
 ```bash
-git clone https://github.com/Clash-Projects/LastWave-native.git
-cd LastWave-native
+git clone https://github.com/Clash-Projects/Aelokia-native.git
+cd Aelokia-native
 ```
 
 ### Community & Questions
@@ -33,7 +33,7 @@ cp .env.example .env
 
 ## Architecture Overview
 
-LastWave is built using modern Android architecture patterns:
+Aelokia is built using modern Android architecture patterns:
 * **UI Layer:** Jetpack Compose, Material 3, Navigation Compose.
 * **Audio Engine:** ExoPlayer / Media3 with Jellyfin FFmpeg software decoders and custom C++ DSP processing (`AudioEngine.cpp`).
 * **Dependency Injection:** Dagger Hilt.

@@ -8,7 +8,7 @@
 
 namespace {
 
-using lastwave::audio::ParametricEq;
+using aelokia::audio::ParametricEq;
 
 ParametricEq* fromHandle(jlong handle) noexcept {
     return reinterpret_cast<ParametricEq*>(static_cast<std::uintptr_t>(handle));
@@ -17,7 +17,7 @@ ParametricEq* fromHandle(jlong handle) noexcept {
 }  // namespace
 
 extern "C" JNIEXPORT void JNICALL
-Java_com_lastwave_app_playback_eq_ParametricEqNative_nativePublish(
+Java_com_aelokia_music_playback_eq_ParametricEqNative_nativePublish(
     JNIEnv* env,
     jobject,
     jboolean enabled,
@@ -63,22 +63,22 @@ Java_com_lastwave_app_playback_eq_ParametricEqNative_nativePublish(
 }
 
 extern "C" JNIEXPORT jboolean JNICALL
-Java_com_lastwave_app_playback_eq_ParametricEqNative_nativeIsEngaged(JNIEnv*, jobject) {
+Java_com_aelokia_music_playback_eq_ParametricEqNative_nativeIsEngaged(JNIEnv*, jobject) {
     return ParametricEq::isEngaged() ? JNI_TRUE : JNI_FALSE;
 }
 
 extern "C" JNIEXPORT jlong JNICALL
-Java_com_lastwave_app_playback_eq_ParametricEqNative_nativeCreate(JNIEnv*, jobject) {
+Java_com_aelokia_music_playback_eq_ParametricEqNative_nativeCreate(JNIEnv*, jobject) {
     return static_cast<jlong>(reinterpret_cast<std::uintptr_t>(new (std::nothrow) ParametricEq()));
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_com_lastwave_app_playback_eq_ParametricEqNative_nativeDestroy(JNIEnv*, jobject, jlong handle) {
+Java_com_aelokia_music_playback_eq_ParametricEqNative_nativeDestroy(JNIEnv*, jobject, jlong handle) {
     delete fromHandle(handle);
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_com_lastwave_app_playback_eq_ParametricEqNative_nativeConfigure(
+Java_com_aelokia_music_playback_eq_ParametricEqNative_nativeConfigure(
     JNIEnv*,
     jobject,
     jlong handle,
@@ -88,12 +88,12 @@ Java_com_lastwave_app_playback_eq_ParametricEqNative_nativeConfigure(
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_com_lastwave_app_playback_eq_ParametricEqNative_nativeReset(JNIEnv*, jobject, jlong handle) {
+Java_com_aelokia_music_playback_eq_ParametricEqNative_nativeReset(JNIEnv*, jobject, jlong handle) {
     if (auto* eq = fromHandle(handle)) eq->reset();
 }
 
 extern "C" JNIEXPORT jboolean JNICALL
-Java_com_lastwave_app_playback_eq_ParametricEqNative_nativeProcessDirect(
+Java_com_aelokia_music_playback_eq_ParametricEqNative_nativeProcessDirect(
     JNIEnv* env,
     jobject,
     jlong handle,
@@ -113,7 +113,7 @@ Java_com_lastwave_app_playback_eq_ParametricEqNative_nativeProcessDirect(
 }
 
 extern "C" JNIEXPORT jboolean JNICALL
-Java_com_lastwave_app_playback_eq_ParametricEqNative_nativeProcessArray(
+Java_com_aelokia_music_playback_eq_ParametricEqNative_nativeProcessArray(
     JNIEnv* env,
     jobject,
     jlong handle,

@@ -62,7 +62,7 @@ video/wide items.
   wide / featured / community; unknown shapes fall back to square.
 - Shelf header v2 renders strapline eyebrow + subtitle + more-chevron (only
   when the destination is a playlist/album the app already opens) + Play all.
-- Side-by-side APK: `app-cardtest.apk` (applicationId `com.lastwave.app.cardtest`).
+- Side-by-side APK: `app-cardtest.apk` (applicationId `com.aelokia.music.cardtest`).
 
 ## Known limitation
 
