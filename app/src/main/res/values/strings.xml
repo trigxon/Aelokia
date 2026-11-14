@@ -1460,7 +1460,7 @@
     <string name="recognize_identifying">Identifying…</string>
     <string name="recognize_cancel">Cancel</string>
     <string name="recognize_close">Close</string>
-    <string name="recognize_search">Search in LastWave</string>
+    <string name="recognize_search">Search in AELOKIA</string>
     <string name="recognize_retry">Try again</string>
     <string name="recognize_open_settings">Open settings</string>
     <string name="recognize_error_permission">Microphone access is needed to listen for music.</string>
