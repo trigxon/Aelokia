@@ -69,9 +69,9 @@ jobs:
           TAG="${{ inputs.tag_name }}"
           # Universal release (Android 10+, R8 + ProGuard + shrinkResources)
           if [ -f "app/build/outputs/apk/release/app-release-signed.apk" ]; then
-            cp app/build/outputs/apk/release/app-release-signed.apk final_apk/Aelokia-v${TAG}-universal.apk
+            cp app/build/outputs/apk/release/app-release-signed.apk final_apk/Aelokia-universal-v${TAG}.apk
           else
-            cp app/build/outputs/apk/release/app-release.apk final_apk/Aelokia-v${TAG}-universal.apk
+            cp app/build/outputs/apk/release/app-release.apk final_apk/Aelokia-universal-v${TAG}.apk
           fi
           # Universal uncompressed variant (Android 10+, raw debuggable/unminified)
           if [ -f "app/build/outputs/apk/rawRelease/app-rawRelease-signed.apk" ]; then
@@ -181,7 +181,7 @@ jobs:
 
           | Package | Recommended OS | Description |
           | :--- | :--- | :--- |
-          | **`Aelokia-v__TAG__-universal.apk`** (~22 MB) | **Android 10+ (Android 10 – 16+)** | **Standard Recommended Release.** R8-optimized with uncompressed page-aligned native libraries for instant memory mapping. |
+          | **`Aelokia-universal-v__TAG__.apk`** (~22 MB) | **Android 10+ (Android 10 – 16+)** | **Standard Recommended Release.** R8-optimized with uncompressed page-aligned native libraries for instant memory mapping. |
           | **`Aelokia-v__TAG__-universal-uncompressed.apk`** (~89 MB) | **Android 10+ (Android 10 – 16+)** | **Raw Release.** Unminified debuggable variant with uncompressed native libraries. |
           | **`Aelokia-v__TAG__-android7.apk`** (~17 MB) | **Android 7.0 – 9.0 (Legacy)** | **Legacy Android 7.0+ Variant.** Built with compressed native libraries for older package managers. |
           | **`Aelokia-v__TAG__-vivo-origin.apk`** (~22 MB) | **vivo phones (OriginOS)** | **vivo Origin Island & music widget build.** Separate APK so vivo's Origin Island and music widget show Aelokia. |
@@ -193,7 +193,7 @@ jobs:
           > **Notice for Android 7.0 – 9.0 Users (`Aelokia-v__TAG__-android7.apk`):**
           > - Hardware GPU glassmorphism / live blur requires Android 12+ and is automatically replaced with translucent dark canvas acrylic styling on older devices.
           > - The media notification uses classic Android media controls rather than Android 13's wavy-progress player.
-          > - For any device running Android 10 or newer, please install the standard **`Aelokia-v__TAG__-universal.apk`** for optimal performance and memory efficiency.
+          > - For any device running Android 10 or newer, please install the standard **`Aelokia-universal-v__TAG__.apk`** for optimal performance and memory efficiency.
           EOF
 
           sed -i "s/__TAG__/${TAG}/g" notice.md

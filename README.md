@@ -103,9 +103,15 @@ For audio lovers, Aelokia packs Bit-Perfect USB DAC output, Lossless FLAC addon 
 
 ### Installation
 
-[![Download APK](https://img.shields.io/badge/Download-Latest_APK-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://github.com/trigxon/Aelokia/releases/download/5.2.1/Aelokia-v5.2.1-universal.apk)
+[![Download APK](https://img.shields.io/badge/Download-Latest_APK-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://github.com/trigxon/Aelokia/releases/download/5.2.1/Aelokia-universal-v5.2.1.apk)
 
-**[Aelokia v5.2.1 — Universal APK](https://github.com/trigxon/Aelokia/releases/download/5.2.1/Aelokia-v5.2.1-universal.apk)** — the latest stable build, works on all supported devices (Android 7.0+ / API 24+).
+**[⬇ Aelokia v5.2.1 — Universal APK](https://github.com/trigxon/Aelokia/releases/download/5.2.1/Aelokia-universal-v5.2.1.apk)** — **the recommended build for most devices** (Android 10+). R8-optimized, works on all modern phones and tablets.
+
+**Other variants** (same app, different packaging — see the [release page](https://github.com/trigxon/Aelokia/releases/tag/5.2.1) for details):
+1. **[Universal](https://github.com/trigxon/Aelokia/releases/download/5.2.1/Aelokia-universal-v5.2.1.apk)** — Android 10+ · recommended · smallest download with full optimizations
+2. **[Universal Uncompressed](https://github.com/trigxon/Aelokia/releases/download/5.2.1/Aelokia-v5.2.1-universal-uncompressed.apk)** — Android 10+ · raw unminified build for debugging and custom firmware
+3. **[Android 7 Legacy](https://github.com/trigxon/Aelokia/releases/download/5.2.1/Aelokia-v5.2.1-android7.apk)** — Android 7.0 – 9.0 · compressed native libraries for older package managers
+4. **[vivo Origin](https://github.com/trigxon/Aelokia/releases/download/5.2.1/Aelokia-v5.2.1-vivo-origin.apk)** — vivo OriginOS only · allowlisted package for Origin Island & music widget
 
 ### Quick Setup
 
