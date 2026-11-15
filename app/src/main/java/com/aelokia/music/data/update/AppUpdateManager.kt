@@ -111,7 +111,7 @@ class AppUpdateManager @Inject constructor(
             }
             try {
                 val request = Request.Builder()
-                    .url("https://api.github.com/repos/Clash-Projects/Aelokia-native/releases/latest")
+                    .url("https://api.github.com/repos/trigxon/Aelokia/releases/latest")
                     .header("Accept", "application/vnd.github.v3+json")
                     .header("User-Agent", "AELOKIA-Android")
                     .build()
@@ -134,7 +134,7 @@ class AppUpdateManager @Inject constructor(
                 val body = response.body?.string().orEmpty()
                 val json = JSONObject(body)
                 val tagName = json.optString("tag_name", "")
-                val releaseUrl = json.optString("html_url", "https://github.com/Clash-Projects/Aelokia-native/releases")
+                val releaseUrl = json.optString("html_url", "https://github.com/trigxon/Aelokia/releases")
                 val releaseNotes = json.optString("body", "")
                 val releaseTitle = json.optString("name", "")
                 val publishedAt = json.optString("published_at", "")
@@ -224,7 +224,7 @@ class AppUpdateManager @Inject constructor(
     /** The release page, for the dialog's GitHub button. */
     fun openReleasePage(context: Context) {
         val targetUrl = _updateInfo.value.releaseUrl.ifBlank {
-            "https://github.com/Clash-Projects/Aelokia-native/releases"
+            "https://github.com/trigxon/Aelokia/releases"
         }
         val intent = Intent(Intent.ACTION_VIEW, Uri.parse(targetUrl)).apply {
             addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)

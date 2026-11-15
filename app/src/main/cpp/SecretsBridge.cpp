@@ -235,7 +235,7 @@ static bool verifyCallerSignature(JNIEnv* env, jobject context, uint8_t outCertS
         }
     } else {
         // Fallback key for placeholder dev builds
-        static const char devFallback[] = "LASTWAVE_DEV_FALLBACK_KEY";
+        static const char devFallback[] = "AELOKIA_DEV_FALLBACK_KEY";
         auto devHash = crypto::sha256(reinterpret_cast<const uint8_t*>(devFallback), sizeof(devFallback) - 1);
         std::memcpy(outCertSha256, devHash.data(), 32);
         return true;

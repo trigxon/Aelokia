@@ -22,7 +22,7 @@ Sources: [AGP compatibility](https://developer.android.com/build/releases/agp-9-
 
 ## Android 16 crash investigation
 
-No LastWave crash stack trace or device reproduction was available. The original code disabled all Backdrop rendering at API 36, attributed it to platform behavior without evidence, and swallowed every throwable from effect setup. Those catches cannot catch native RenderThread faults.
+No crash stack trace or device reproduction was available. The original code disabled all Backdrop rendering at API 36, attributed it to platform behavior without evidence, and swallowed every throwable from effect setup. Those catches cannot catch native RenderThread faults.
 
 Upstream [issue 54](https://github.com/Kyant0/AndroidLiquidGlass/issues/54) documents a native crash caused by drawing a backdrop inside its own capture. That is evidence for the failure mechanism, not proof that it caused the user's particular crash. The previous root exposed a layer captured around NavHost to descendants; this architecture was removed so descendants cannot sample that enclosing capture. Root surfaces now sample a separate background sibling. No custom uniform calls remain in application glass code; library lens uniform names were inspected against the published source.
 
@@ -47,13 +47,13 @@ Paths below are relative to the project root.
 | Files | Change |
 | --- | --- |
 | `gradle/libs.versions.toml`, `gradle.properties`, `gradle/wrapper/gradle-wrapper.properties`, `app/build.gradle.kts` | Required published dependency/toolchain compatibility. |
-| `app/src/main/java/com/lastwave/app/ui/theme/LiquidGlass.kt` | Shared Kyant effects, API guards, fallback, artwork blur; removes painted refraction and catch-all handling. |
-| `app/src/main/java/com/lastwave/app/ui/theme/Theme.kt`, `app/src/main/java/com/lastwave/app/ui/navigation/NavGraph.kt` | Background sibling ownership; removes enclosing NavHost capture. |
-| `app/src/main/java/com/lastwave/app/ui/common/LiquidGlassCard.kt` | Glass, clipping and tint order. |
-| `app/src/main/java/com/lastwave/app/ui/player/PlayerHost.kt`, `app/src/main/java/com/lastwave/app/ui/player/LyricsView.kt`, `app/src/main/java/com/lastwave/app/ui/player/ModernLyricsView.kt` | Kyant artwork blur and existing translucent lyrics controls. |
-| `app/src/main/java/com/lastwave/app/ui/artist/ArtistDetailScreen.kt`, `app/src/main/java/com/lastwave/app/ui/album/AlbumDetailScreen.kt`, `app/src/main/java/com/lastwave/app/ui/playlist/PlaylistDetailScreen.kt` | Shared screen captures and detail glass surfaces. |
-| `app/src/main/java/com/lastwave/app/ui/feed/FeedScreen.kt`, `app/src/main/java/com/lastwave/app/ui/home/HomeScreen.kt`, `app/src/main/java/com/lastwave/app/ui/home/FriendProfileScreen.kt` | Remaining translucent buttons and statistic pills. Existing unrelated feed edits were preserved. |
-| `app/src/main/java/com/lastwave/app/ui/settings/SettingsScreen.kt`, `app/src/main/java/com/lastwave/app/ui/settings/DownloadsScreen.kt` | Lyrics sheet, sheet controls, active download card. |
+| `app/src/main/java/com/aelokia/music/ui/theme/LiquidGlass.kt` | Shared Kyant effects, API guards, fallback, artwork blur; removes painted refraction and catch-all handling. |
+| `app/src/main/java/com/aelokia/music/ui/theme/Theme.kt`, `app/src/main/java/com/aelokia/music/ui/navigation/NavGraph.kt` | Background sibling ownership; removes enclosing NavHost capture. |
+| `app/src/main/java/com/aelokia/music/ui/common/LiquidGlassCard.kt` | Glass, clipping and tint order. |
+| `app/src/main/java/com/aelokia/music/ui/player/PlayerHost.kt`, `app/src/main/java/com/aelokia/music/ui/player/LyricsView.kt`, `app/src/main/java/com/aelokia/music/ui/player/ModernLyricsView.kt` | Kyant artwork blur and existing translucent lyrics controls. |
+| `app/src/main/java/com/aelokia/music/ui/artist/ArtistDetailScreen.kt`, `app/src/main/java/com/aelokia/music/ui/album/AlbumDetailScreen.kt`, `app/src/main/java/com/aelokia/music/ui/playlist/PlaylistDetailScreen.kt` | Shared screen captures and detail glass surfaces. |
+| `app/src/main/java/com/aelokia/music/ui/feed/FeedScreen.kt`, `app/src/main/java/com/aelokia/music/ui/home/HomeScreen.kt`, `app/src/main/java/com/aelokia/music/ui/home/FriendProfileScreen.kt` | Remaining translucent buttons and statistic pills. Existing unrelated feed edits were preserved. |
+| `app/src/main/java/com/aelokia/music/ui/settings/SettingsScreen.kt`, `app/src/main/java/com/aelokia/music/ui/settings/DownloadsScreen.kt` | Lyrics sheet, sheet controls, active download card. |
 | `docs/liquid-glass-migration.md` | Dependency evidence, capture ownership, compatibility and validation limits. |
 
 Only source inspection, published metadata/source reading, edits, and diff review were performed. No Gradle invocation, build, test, lint, dependency refresh, installation, APK generation or runtime testing was performed. Toolchain resolution/compilation, visual fidelity and device behavior remain unverified.

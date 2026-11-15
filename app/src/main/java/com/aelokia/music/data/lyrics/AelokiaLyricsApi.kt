@@ -30,8 +30,8 @@ private data class AelokiaLyricsResponse(
  * Syllable and line-synced Apple lyrics provided by Aelokia backend.
  *
  * Configured via GitHub Actions secrets / BuildConfig:
- * - `LASTWAVE_LYRICS_TOKEN`: Access token passed via `X-Lyrics-Token` header.
- * - `LASTWAVE_LYRICS_URL`: Base backend URL.
+ * - `AELOKIA_LYRICS_TOKEN`: Access token passed via `X-Lyrics-Token` header.
+ * - `AELOKIA_LYRICS_URL`: Base backend URL.
  */
 @Singleton
 class AelokiaLyricsApi @Inject constructor(
@@ -45,10 +45,10 @@ class AelokiaLyricsApi @Inject constructor(
     }
 
     private val baseUrl: String
-        get() = BuildConfig.LASTWAVE_LYRICS_URL.trimEnd('/')
+        get() = BuildConfig.AELOKIA_LYRICS_URL.trimEnd('/')
 
     private val token: String
-        get() = BuildConfig.LASTWAVE_LYRICS_TOKEN
+        get() = BuildConfig.AELOKIA_LYRICS_TOKEN
 
     suspend fun fetchLyrics(
         title: String,

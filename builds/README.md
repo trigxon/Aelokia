@@ -1,9 +1,9 @@
 # Builds
 
-- **Release Artifact:** `LastWave-v5.0.0-release.apk`
+- **Release Artifact:** `Aelokia-v5.2.1-release.apk`
   - Variant: `release` (`:app:assembleRelease`)
   - Optimizations: R8 code shrinking, dead-code elimination, resource shrinking (`isMinifyEnabled = true`, `isShrinkResources = true`)
-- **Debug Artifact:** `LastWave-v5.0.0-debug.apk`
+- **Debug Artifact:** `Aelokia-v5.2.1-debug.apk`
   - Variant: `debug` (`:app:assembleDebug`)
   - Uncompressed full DEX with all debug symbols, no R8 shrinking
 - **Version:** `5.0.0` (versionCode `27`)

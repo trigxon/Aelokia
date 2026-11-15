@@ -48,10 +48,10 @@ private val LONG_PREFERENCE_NAMES = setOf(
  */
 private val SENSITIVE_PREFERENCE_NAMES = setOf(
     "ytm_cookies",
-    "lw_apikey",
-    "lw_apisecret",
-    "lw_sessionkey",
-    "lw_addon_url",
+    "ak_apikey",
+    "ak_apisecret",
+    "ak_sessionkey",
+    "ak_addon_url",
 )
 
 
@@ -307,12 +307,12 @@ class BackupRepository @Inject constructor(
     }
 
     private companion object {
-        const val GUEST_MODE_PREFERENCE = "lw_guest_mode"
+        const val GUEST_MODE_PREFERENCE = "ak_guest_mode"
         val AUTH_PREFERENCE_NAMES = listOf(
-            "lw_apikey",
-            "lw_apisecret",
-            "lw_sessionkey",
-            "lw_username",
+            "ak_apikey",
+            "ak_apisecret",
+            "ak_sessionkey",
+            "ak_username",
         )
     }
 }

@@ -8,19 +8,19 @@ class AppUpdateManagerTest {
     private val sampleAssets = listOf(
         ReleaseAsset(
             name = "AELOKIA-v4.2.4-android7.apk",
-            downloadUrl = "https://github.com/Clash-Projects/Aelokia-Native/releases/download/4.2.4/Aelokia-v4.2.4-android7.apk",
+            downloadUrl = "https://github.com/trigxon/Aelokia/releases/download/4.2.4/Aelokia-v4.2.4-android7.apk",
         ),
         ReleaseAsset(
             name = "AELOKIA-v4.2.4-universal-uncompressed.apk",
-            downloadUrl = "https://github.com/Clash-Projects/Aelokia-Native/releases/download/4.2.4/Aelokia-v4.2.4-universal-uncompressed.apk",
+            downloadUrl = "https://github.com/trigxon/Aelokia/releases/download/4.2.4/Aelokia-v4.2.4-universal-uncompressed.apk",
         ),
         ReleaseAsset(
             name = "AELOKIA-v4.2.4-universal.apk",
-            downloadUrl = "https://github.com/Clash-Projects/Aelokia-Native/releases/download/4.2.4/Aelokia-v4.2.4-universal.apk",
+            downloadUrl = "https://github.com/trigxon/Aelokia/releases/download/4.2.4/Aelokia-v4.2.4-universal.apk",
         ),
         ReleaseAsset(
             name = "SHA256SUMS.txt",
-            downloadUrl = "https://github.com/Clash-Projects/Aelokia-Native/releases/download/4.2.4/SHA256SUMS.txt",
+            downloadUrl = "https://github.com/trigxon/Aelokia/releases/download/4.2.4/SHA256SUMS.txt",
         ),
     )
 

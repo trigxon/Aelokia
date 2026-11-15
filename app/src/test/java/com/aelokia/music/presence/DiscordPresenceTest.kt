@@ -183,7 +183,7 @@ class DiscordPresenceTest {
         assertEquals("Get Aelokia", buttons[1].jsonObject["label"]?.jsonPrimitive?.content)
         // Native build, not the desktop one.
         assertEquals(
-            "https://github.com/Clash-Projects/Aelokia-Native",
+            "https://github.com/trigxon/Aelokia",
             buttons[1].jsonObject["url"]?.jsonPrimitive?.content,
         )
 
@@ -191,7 +191,7 @@ class DiscordPresenceTest {
         // to deep-link, so it falls back to the releases page.
         val local = DiscordPresence.buildActivity(state(track = track(videoId = null)), NOW_MS)["buttons"]!!.jsonArray
         assertEquals(
-            "https://github.com/Clash-Projects/Aelokia-Native/releases",
+            "https://github.com/trigxon/Aelokia/releases",
             local[0].jsonObject["url"]?.jsonPrimitive?.content,
         )
     }

@@ -46,8 +46,8 @@ class LoudnessPrefs @Inject constructor(
     applicationScope: CoroutineScope,
 ) {
     private object Keys {
-        val MODE = stringPreferencesKey("lw_loudness_mode")
-        val PREAMP_DB = floatPreferencesKey("lw_loudness_preamp_db")
+        val MODE = stringPreferencesKey("ak_loudness_mode")
+        val PREAMP_DB = floatPreferencesKey("ak_loudness_preamp_db")
     }
 
     private val data: Flow<Preferences> = context.loudnessDataStore.data

@@ -70,18 +70,18 @@ app/src/main/cpp/SecretsBridge_generated.h
 
 
 # Addon service & credentials (never commit)
-lastwave-addon-service/
+aelokia-addon-service/
 *.zip
 credentials_backup*
 
 # Isolated git worktrees (never commit their contents)
 .worktrees/
 
-# Standalone Telemetry Repository (separated to Clash-Projects/LastWave-Telemetry)
-lastwave-live/
+# Standalone Telemetry Repository (separated to standalone telemetry repo)
+aelokia-live/
 
-# Standalone Jam Sync Repository (separated to Clash-Projects/LastWave-Jam)
-lastwave-jam/
+# Standalone Jam Sync Repository (separated to standalone jam-sync repo)
+aelokia-jam/
 
 # Superpowers artifacts and documentation
 docs/superpowers/

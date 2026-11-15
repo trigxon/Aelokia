@@ -869,7 +869,7 @@
     <string name="set_discord_title">Discord Rich Presence</string>
     <string name="set_discord_on">Attivo • brano, qualità e copertina compaiono sul profilo Discord</string>
     <string name="set_discord_off">Disattivo • AELOKIA non compare sul profilo Discord</string>
-    <string name="set_tg_sub">Unisciti a @clashprojects su Telegram</string>
+    <string name="set_tg_sub">Ottieni gli aggiornamenti di AELOKIA dalla schermata Informazioni</string>
     <string name="set_discord_support">Supporto Discord</string>
     <string name="set_discord_support_sub">Entra nella community Discord</string>
     <string name="set_more_apps_sub">Unisciti a @MaterialYouApp su Telegram</string>

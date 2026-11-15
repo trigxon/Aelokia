@@ -47,8 +47,8 @@ jobs:
       RELEASE_STORE_PASSWORD: ${{ secrets.KEY_STORE_PASSWORD || secrets.RELEASE_STORE_PASSWORD }}
       RELEASE_KEY_ALIAS: ${{ secrets.ALIAS || secrets.RELEASE_KEY_ALIAS || 'release_key' }}
       RELEASE_KEY_PASSWORD: ${{ secrets.KEY_PASSWORD || secrets.RELEASE_KEY_PASSWORD }}
-      LASTWAVE_LYRICS_TOKEN: ${{ secrets.LASTWAVE_LYRICS_TOKEN }}
-      LASTWAVE_LYRICS_URL: ${{ secrets.LASTWAVE_LYRICS_URL }}
+      AELOKIA_LYRICS_TOKEN: ${{ secrets.AELOKIA_LYRICS_TOKEN }}
+      AELOKIA_LYRICS_URL: ${{ secrets.AELOKIA_LYRICS_URL }}
       EXPECTED_CERT_SHA256: ${{ secrets.EXPECTED_CERT_SHA256 }}
 
     steps:

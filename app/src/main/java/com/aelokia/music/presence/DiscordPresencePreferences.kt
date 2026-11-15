@@ -28,7 +28,7 @@ class DiscordPresencePreferences @Inject constructor(
     private val dataStore: DataStore<Preferences>,
 ) {
     private object Keys {
-        val ENABLED = booleanPreferencesKey("lw_discord_rich_presence")
+        val ENABLED = booleanPreferencesKey("ak_discord_rich_presence")
     }
 
     val enabled: Flow<Boolean> = dataStore.data

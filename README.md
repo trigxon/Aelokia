@@ -103,9 +103,9 @@ For audio lovers, Aelokia packs Bit-Perfect USB DAC output, Lossless FLAC addon 
 
 ### Installation
 
-[![Download APK](https://img.shields.io/badge/Download-Latest_APK-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://github.com/trigxon/Arkify/releases/download/5.2.1/Aelokia-v5.2.1-universal.apk)
+[![Download APK](https://img.shields.io/badge/Download-Latest_APK-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://github.com/trigxon/Aelokia/releases/download/5.2.1/Aelokia-v5.2.1-universal.apk)
 
-**[Aelokia v5.2.1 — Universal APK](https://github.com/trigxon/Arkify/releases/download/5.2.1/Aelokia-v5.2.1-universal.apk)** — the latest stable build, works on all supported devices (Android 7.0+ / API 24+).
+**[Aelokia v5.2.1 — Universal APK](https://github.com/trigxon/Aelokia/releases/download/5.2.1/Aelokia-v5.2.1-universal.apk)** — the latest stable build, works on all supported devices (Android 7.0+ / API 24+).
 
 ### Quick Setup
 
@@ -128,8 +128,8 @@ For audio lovers, Aelokia packs Bit-Perfect USB DAC output, Lossless FLAC addon 
 
 ```bash
 # Clone the repository
-git clone https://github.com/trigxon/Arkify.git
-cd Arkify
+git clone https://github.com/trigxon/Aelokia.git
+cd Aelokia
 
 # Build the release APK
 ./gradlew assembleRelease

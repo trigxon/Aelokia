@@ -56,17 +56,17 @@ class ThemePreferences @Inject constructor(
     private val dataStore: DataStore<Preferences>,
 ) {
     private object Keys {
-        val THEME_MODE = stringPreferencesKey("lw_themeMode")
-        val ACCENT_COLOR = stringPreferencesKey("lw_accent")
-        val ACCENT_LIGHT = stringPreferencesKey("lw_accentLight")
-        val ACCENT_MODE = stringPreferencesKey("lw_accentMode")
-        val AMOLED = booleanPreferencesKey("lw_amoled")
-        val LIQUID_GLASS = booleanPreferencesKey("lw_liquidGlass")
-        val MD3_NAV_BAR = booleanPreferencesKey("lw_md3NavBar")
-        val HIDE_NAV_TABS = booleanPreferencesKey("lw_hideNavTabs")
-        val UI_HAPTICS = booleanPreferencesKey("lw_ui_haptics")
-        val LASTWAVE_THEME = booleanPreferencesKey("lw_lastwave_theme")
-        val APP_ICON = stringPreferencesKey("lw_app_icon")
+        val THEME_MODE = stringPreferencesKey("ak_themeMode")
+        val ACCENT_COLOR = stringPreferencesKey("ak_accent")
+        val ACCENT_LIGHT = stringPreferencesKey("ak_accentLight")
+        val ACCENT_MODE = stringPreferencesKey("ak_accentMode")
+        val AMOLED = booleanPreferencesKey("ak_amoled")
+        val LIQUID_GLASS = booleanPreferencesKey("ak_liquidGlass")
+        val MD3_NAV_BAR = booleanPreferencesKey("ak_md3NavBar")
+        val HIDE_NAV_TABS = booleanPreferencesKey("ak_hideNavTabs")
+        val UI_HAPTICS = booleanPreferencesKey("ak_ui_haptics")
+        val AELOKIA_THEME = booleanPreferencesKey("ak_aelokia_theme")
+        val APP_ICON = stringPreferencesKey("ak_app_icon")
     }
 
     val prefs: Flow<ThemePrefs> = dataStore.data
@@ -82,7 +82,7 @@ class ThemePreferences @Inject constructor(
                 md3NavBar = p.readSafely(Keys.MD3_NAV_BAR) ?: false,
                 hideNavTabs = p.readSafely(Keys.HIDE_NAV_TABS) ?: false,
                 uiHaptics = p.readSafely(Keys.UI_HAPTICS) ?: true,
-                aelokiaTheme = p.readSafely(Keys.LASTWAVE_THEME) ?: false,
+                aelokiaTheme = p.readSafely(Keys.AELOKIA_THEME) ?: false,
                 appIcon = AppIcon.fromId(p.readSafely(Keys.APP_ICON)),
             )
         }
@@ -96,7 +96,7 @@ class ThemePreferences @Inject constructor(
             it[Keys.ACCENT_COLOR] = color
             it[Keys.ACCENT_LIGHT] = light
             it[Keys.ACCENT_MODE] = AccentMode.MANUAL.storageValue
-            it[Keys.LASTWAVE_THEME] = false
+            it[Keys.AELOKIA_THEME] = false
         }
     }
 
@@ -104,7 +104,7 @@ class ThemePreferences @Inject constructor(
         dataStore.edit {
             it[Keys.ACCENT_MODE] = mode.storageValue
             if (mode == AccentMode.DYNAMIC || mode == AccentMode.MONOCHROME) {
-                it[Keys.LASTWAVE_THEME] = false
+                it[Keys.AELOKIA_THEME] = false
             }
         }
     }
@@ -131,7 +131,7 @@ class ThemePreferences @Inject constructor(
 
     suspend fun setAelokiaTheme(enabled: Boolean) {
         dataStore.edit {
-            it[Keys.LASTWAVE_THEME] = enabled
+            it[Keys.AELOKIA_THEME] = enabled
             if (enabled) {
                 it[Keys.ACCENT_COLOR] = "#C9FB00"
                 it[Keys.ACCENT_LIGHT] = "#C9FB00"

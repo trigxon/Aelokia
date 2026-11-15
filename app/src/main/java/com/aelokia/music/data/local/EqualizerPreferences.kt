@@ -111,11 +111,11 @@ class EqualizerPreferences @Inject constructor(
     private val dataStore: DataStore<Preferences>,
 ) {
     private object Keys {
-        val ENABLED = booleanPreferencesKey("lw_eq_enabled")
-        val PRESET_NAME = stringPreferencesKey("lw_eq_preset")
-        val GAINS_DB = stringPreferencesKey("lw_eq_gains")
+        val ENABLED = booleanPreferencesKey("ak_eq_enabled")
+        val PRESET_NAME = stringPreferencesKey("ak_eq_preset")
+        val GAINS_DB = stringPreferencesKey("ak_eq_gains")
         /** "name\tg1,g2,...\n" per user preset, in the order they were created. */
-        val USER_PRESETS = stringPreferencesKey("lw_eq_user_presets")
+        val USER_PRESETS = stringPreferencesKey("ak_eq_user_presets")
     }
 
     val settings: Flow<EqualizerSettings> = dataStore.data

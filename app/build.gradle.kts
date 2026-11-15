@@ -107,7 +107,7 @@ abstract class PrepareNativeBridgeTask : DefaultTask() {
             val salt = ByteArray(16).also { rng.nextBytes(it) }
             val keyBytes = if (cert.startsWith("PLACEHOLDER")) {
                 MessageDigest.getInstance("SHA-256")
-                    .digest("LASTWAVE_DEV_FALLBACK_KEY".toByteArray(Charsets.UTF_8))
+                    .digest("AELOKIA_DEV_FALLBACK_KEY".toByteArray(Charsets.UTF_8))
             } else {
                 cert.chunked(2).map { it.toInt(16).toByte() }.toByteArray()
             }
@@ -257,10 +257,10 @@ android {
             }
         }
 
-        val aelokiaLyricsToken = resolveSecret("LASTWAVE_LYRICS_TOKEN")
-        val aelokiaLyricsUrl = resolveSecret("LASTWAVE_LYRICS_URL")
-        buildConfigField("String", "LASTWAVE_LYRICS_TOKEN", "\"$aelokiaLyricsToken\"")
-        buildConfigField("String", "LASTWAVE_LYRICS_URL", "\"$aelokiaLyricsUrl\"")
+        val aelokiaLyricsToken = resolveSecret("AELOKIA_LYRICS_TOKEN")
+        val aelokiaLyricsUrl = resolveSecret("AELOKIA_LYRICS_URL")
+        buildConfigField("String", "AELOKIA_LYRICS_TOKEN", "\"$aelokiaLyricsToken\"")
+        buildConfigField("String", "AELOKIA_LYRICS_URL", "\"$aelokiaLyricsUrl\"")
 
         externalNativeBuild {
             cmake {

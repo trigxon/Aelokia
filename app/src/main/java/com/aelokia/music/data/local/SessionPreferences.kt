@@ -37,11 +37,11 @@ class SessionPreferences @Inject constructor(
     private val externalScope: CoroutineScope,
 ) {
     private object Keys {
-        val API_KEY = stringPreferencesKey("lw_apikey")
-        val API_SECRET = stringPreferencesKey("lw_apisecret")
-        val SESSION_KEY = stringPreferencesKey("lw_sessionkey")
-        val USERNAME = stringPreferencesKey("lw_username")
-        val GUEST_MODE = booleanPreferencesKey("lw_guest_mode")
+        val API_KEY = stringPreferencesKey("ak_apikey")
+        val API_SECRET = stringPreferencesKey("ak_apisecret")
+        val SESSION_KEY = stringPreferencesKey("ak_sessionkey")
+        val USERNAME = stringPreferencesKey("ak_username")
+        val GUEST_MODE = booleanPreferencesKey("ak_guest_mode")
     }
 
     val session: StateFlow<SessionData> = dataStore.data

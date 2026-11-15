@@ -39,10 +39,10 @@ class ScrobblerPreferences @Inject constructor(
     private val dataStore: DataStore<Preferences>,
 ) {
     private object Keys {
-        val ENABLED = booleanPreferencesKey("lw_scrobbler_enabled")
-        val SUBMIT_NOW_PLAYING = booleanPreferencesKey("lw_scrobbler_now_playing")
-        val PERCENT = intPreferencesKey("lw_scrobbler_percent")
-        val PACKAGES = stringSetPreferencesKey("lw_scrobbler_packages")
+        val ENABLED = booleanPreferencesKey("ak_scrobbler_enabled")
+        val SUBMIT_NOW_PLAYING = booleanPreferencesKey("ak_scrobbler_now_playing")
+        val PERCENT = intPreferencesKey("ak_scrobbler_percent")
+        val PACKAGES = stringSetPreferencesKey("ak_scrobbler_packages")
     }
 
     val settings: Flow<ScrobblerSettings> = dataStore.data
