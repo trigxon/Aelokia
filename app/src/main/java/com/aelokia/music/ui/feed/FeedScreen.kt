@@ -1575,6 +1575,7 @@ fun FeedScreen(
                 backdrop = if (useFeedGlass) feedBackdrop else null,
                 actions = {
                     HeaderActionIcon(Icons.Filled.Search, "Search", onOpenSearch)
+                    com.aelokia.music.ui.recognition.MusicRecognitionButton(key = "recognition_feed")
                     IconButton(onClick = onOpenSettings) {
                         com.aelokia.music.ui.home.ProfileAvatar(avatarUrl = state.avatarUrl, modifier = Modifier.size(38.dp))
                     }
